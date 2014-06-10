@@ -1,0 +1,20 @@
+# phpVMS htaccess file
+# You can add additional rules here, just Google search em...
+
+Options +FollowSymLinks
+Options All -Indexes 
+
+# Rewrite Rules
+# To enable clean URLs, remove the # from the lines below
+# And then, in your local.config.php, set URL_REWRITE to true
+
+#RewriteEngine on
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php?q=$1  [QSA,L]
+
+# Security, block users from being able to see source files
+<FilesMatch "\.(htaccess|htpasswd|ini|phps|fla|psd|log|sh|tpl)$">
+ Order Allow,Deny
+ Deny from all
+</FilesMatch>
