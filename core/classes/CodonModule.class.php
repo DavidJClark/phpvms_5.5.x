@@ -42,18 +42,18 @@
  */
 class CodonModule
 {
-	public static $post;
-	public static $get;
-	public static $controller;
-	public static $activeModule;
+	public $post;
+	public $get;
+	public $controller;
+	public $activeModule;
 	public $action;
-	
+
 	public $title;
-	
+
 	public function __construct() {
-		
+
 	}
-	
+
 	/**
 	 * Initialize the parent class. Called by the MainController
 	 *  when the module is created
@@ -62,32 +62,32 @@ class CodonModule
 	public function init($module_name='') {
 
 		$module_name = strtolower($module_name);
-				
+
 		$this->post = Vars::$post;
 		$this->get = CodonRewrite::$get;
 		$this->request = Vars::$request;
 		$this->controller = CodonRewrite::$controller;
-			
+
 		$this->init = true;
 		$this->activeModule = MainController::$activeModule;
 	}
-	
+
 	public function config($setting) {
 		return Config::Get($setting);
 	}
-	
+
 	public function get($name) {
 		return Template::Get($name, true);
 	}
-	
+
 	public function set($name, $value) {
 		Template::Set($name, $value);
 	}
-	
+
 	public function show($tpl) {
 		Template::Show($tpl);
 	}
-	
+
 	public function render($tpl) {
 		Template::Show($tpl);
 	}
@@ -95,14 +95,14 @@ class CodonModule
 	public function redirect($url) {
 		header('Location: '.$url);
 	}
-	
+
 	public function log($text, $file='log') {
 		Debug::log($text, $file);
 	}
-	
+
 	public function firephp() {
 		include_once CORE_PATH.DS.'lib'.DS.'firebug'.DS.'FirePHP.class.php';
-		
+
 		$instance = FirePHP::getInstance(true);
 		$args = func_get_args();
 		return call_user_func_array(array($instance,'fb'),$args);
@@ -116,7 +116,7 @@ class CodonModule
 			include SITE_ROOT.'/core/hooks/'.$hook_name;
 		}
 	}
-    
+
     /**
      * @param $permission array bitwise
      *          Can be a single permission constant defined on app.config.php or an array of permissions.
@@ -130,7 +130,7 @@ class CodonModule
             $this->checkPerm($permission);
         }
     }
-    
+
     private function checkPerm($perm){
         if(!PilotGroups::group_has_perm(Auth::$usergroups, $perm)) {
         	Debug::showCritical('Unauthorized access - Invalid Permissions.');
