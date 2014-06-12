@@ -26,11 +26,11 @@ if(!$pilot) {
 				<li><strong>Total Flights: </strong><?php echo $pilot->totalflights?></li>
 				<li><strong>Total Hours: </strong><?php echo Util::AddTime($pilot->totalhours, $pilot->transferhours); ?></li>
 				<li><strong>Location: </strong>
-					<img src="<?php echo Countries::getCountryImage($pilot->location);?>" 
+					<img src="<?php echo Countries::getCountryImage($pilot->location);?>"
 								alt="<?php echo Countries::getCountryName($pilot->location);?>" />
-					<?php echo Countries::getCountryName($pilot->location);?> 
+					<?php echo Countries::getCountryName($pilot->location);?>
 				</li>
-			
+
 				<?php
 				// Show the public fields
 				if($allfields) {
@@ -40,48 +40,31 @@ if(!$pilot) {
 				}
 				?>
 			</ul>
-			
+
 			<p>
 			<strong>Awards</strong>
 			<?php
-			if(is_array($allawards)) {			
+			if(is_array($allawards)) {
 			?>
 			<ul>
-				<?php 
-                foreach($allawards as $award) { 
+				<?php
+                foreach($allawards as $award) {
 					/* To show the image:
-					
+
 						<img src="<?php echo $award->image?>" alt="<?php echo $award->descrip?>" />
 					*/
 				?>
 					<li><?php echo $award->name ?></li>
 				<?php } ?>
-			</ul>	
+			</ul>
 			<?php
 			}
 			?>
 		</p>
 		</td>
-	
+
 	</tr>
 </table>
-<?php
-/*
-	Added in 2.0!
-*/
-$chart_width = '800';
-$chart_height = '250';
 
-/* Don't need to change anything below this here */
-?>
-<div align="center" style="width: 100%;">
-	<div align="center" id="pireps_chart"></div>
-</div>
-
-<script type="text/javascript" src="<?php echo fileurl('/lib/js/ofc/js/swfobject.js')?>"></script>
-<script type="text/javascript">
-swfobject.embedSWF("<?php echo fileurl('/lib/js/ofc/open-flash-chart.swf');?>", 
-	"pireps_chart", "<?php echo $chart_width;?>", "<?php echo $chart_height;?>", 
-	"9.0.0", "expressInstall.swf", 
-	{"data-file":"<?php echo actionurl('/pilots/statsdaysdata/'.$pilot->pilotid);?>"});
-</script>
+<!-- Google Chart Implementation - OFC Replacement - simpilot -->
+<img src="<?php echo $chart_url  ?>" alt="Pirep Chart" />
