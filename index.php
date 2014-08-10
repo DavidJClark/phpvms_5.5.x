@@ -37,6 +37,11 @@
  * @package codon_core
  */
 
+/**
+ *Package modifications made by David Clark (simpilotgroup)
+ * git hub notated as phpvms5.5.x
+ */
+
 define('CODON_MODULES_PATH', dirname(__FILE__).'/core/modules');
 define('CODON_DEFAULT_MODULE', 'Frontpage');
 include 'core/codon.config.php';
@@ -73,7 +78,7 @@ if(file_exists(SKINS_PATH.'/layout.php'))
 	$BaseTemplate->Set('page_htmlhead', Template::Get('core_htmlhead.php', true));
 	$BaseTemplate->Set('page_htmlreq', Template::Get('core_htmlreq.php', true));
 	$BaseTemplate->Set('page_content', $page_content);
-	
+
 	$BaseTemplate->ShowTemplate('layout.php');
 }
 else
