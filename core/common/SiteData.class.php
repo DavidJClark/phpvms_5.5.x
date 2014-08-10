@@ -18,10 +18,10 @@
  */
 
 class SiteData extends CodonData {
-    
+
     /**
      * SiteData::loadSiteSettings()
-     * 
+     *
      * @return
      */
     public static function loadSiteSettings() {
@@ -49,18 +49,18 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::getNewsItem()
-     * 
+     *
      * @param mixed $id
      * @return
      */
     public static function getNewsItem($id) {
-        return DB::get_row('SELECT *, UNIX_TIMESTAMP(postdate) AS postdate 
+        return DB::get_row('SELECT *, UNIX_TIMESTAMP(postdate) AS postdate
 									FROM ' . TABLE_PREFIX . 'news WHERE id=' . $id);
     }
 
     /**
      * SiteData::getAllNews()
-     * 
+     *
      * @return
      */
     public static function getAllNews() {
@@ -70,16 +70,19 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::AddNewsItem()
-     * 
+     *
      * @param mixed $subject
      * @param mixed $body
      * @return
      */
     public static function AddNewsItem($subject, $body) {
-        
+
         $subject = DB::escape($subject);
         $body = DB::escape($body);
         $postedby = Auth::$userinfo->firstname . ' ' . Auth::$userinfo->lastname;
+
+        //added to combat pilot names with apostrophes
+        $postedby = addslashes($postedby);
 
         $sql = 'INSERT INTO ' . TABLE_PREFIX . "news (subject, body, postdate, postedby)
 					VALUES ('$subject', '$body', NOW(), '$postedby')";
@@ -110,7 +113,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::EditNewsItem()
-     * 
+     *
      * @param mixed $id
      * @param mixed $subject
      * @param mixed $body
@@ -132,7 +135,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::DeleteItem()
-     * 
+     *
      * @param mixed $id
      * @return
      */
@@ -148,7 +151,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::GetAllPages()
-     * 
+     *
      * @param bool $onlyenabled
      * @param bool $loggedin
      * @return
@@ -170,7 +173,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::GetPageData()
-     * 
+     *
      * @param mixed $pageid
      * @return
      */
@@ -182,7 +185,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::GetPageDataByName()
-     * 
+     *
      * @param mixed $pagename
      * @return
      */
@@ -195,7 +198,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::AddPage()
-     * 
+     *
      * @param mixed $title
      * @param mixed $content
      * @param bool $public
@@ -246,7 +249,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::DeletePage()
-     * 
+     *
      * @param mixed $pageid
      * @return
      */
@@ -268,7 +271,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::GetPageContent()
-     * 
+     *
      * @param mixed $filename
      * @return
      */
@@ -299,7 +302,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::EditFile()
-     * 
+     *
      * @param mixed $pageid
      * @param mixed $content
      * @param mixed $public
@@ -330,7 +333,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::EditPageFile()
-     * 
+     *
      * @param mixed $filename
      * @param mixed $content
      * @return
@@ -353,7 +356,7 @@ class SiteData extends CodonData {
 
     /**
      * SiteData::GetAvailableSkins()
-     * 
+     *
      * @return
      */
     public static function GetAvailableSkins() {
