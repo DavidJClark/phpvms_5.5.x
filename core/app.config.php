@@ -18,12 +18,12 @@
 
 /**
  * DO NOT MODIFY THESE SETTINGS HERE!!
- * They will get over-ridden in an update. These are just defaults 
+ * They will get over-ridden in an update. These are just defaults
  * To change, copy-paste and change the line/option/setting into your
  *  local.config.php file
  *
  * Most of these are in your local.config.php already
- * 
+ *
  * View the docs for details about these settings
  */
 
@@ -55,7 +55,7 @@ Config::Set('PAGE_EXT', '.htm');	# .htm is fine. You can still run PHP
 Config::Set('PILOTID_OFFSET', 0);	# What # to start pilot ID's from
 Config::Set('PILOTID_LENGTH', 4);	# Length of the Pilot ID
 Config::Set('UNITS', 'nm');			# Your units: nm, mi or km
-Config::Set('LOAD_FACTOR', '82');	# %age load factor 
+Config::Set('LOAD_FACTOR', '82');	# %age load factor
 Config::Set('CARGO_UNITS', 'lbs');
 Config::Set('DEFAULT_MAX_CARGO_LOAD', 10000);
 Config::Set('DEFAULT_MAX_PAX_LOAD', 250);
@@ -125,7 +125,7 @@ Config::Set('MAP_ZOOM_LEVEL', 12);
 # ACARS options
 #  Minutes, flights to show on the ACARS
 #  Default is 720 minutes (12 hours)
-Config::Set('ACARS_LIVE_TIME', 720); 
+Config::Set('ACARS_LIVE_TIME', 720);
 Config::Set('ACARS_DEBUG', false);
 
 /*
@@ -134,20 +134,20 @@ Config::Set('ACARS_DEBUG', false);
 	Euro (�), enter "&#8364;"
 	Yen (�), enter "&yen;"
 	Pounds (�), enter "&pound;"
-	
+
   For example, to set EUROS:
 	Config::Set('MONEY_UNIT', '&#8364;');
  */
- 
+
 Config::Set('MONEY_UNIT', '$');
 
 /*
  To change the money format, look at:
   http://us3.php.net/money_format
- 
+
  However, I do not recommend changing this
  */
- 
+
 Config::Set('MONEY_FORMAT', '%(#10n');
 
 
@@ -155,7 +155,7 @@ Config::Set('MONEY_FORMAT', '%(#10n');
 /* Default fuel price, for airports that don't have
 	And the surcharge percentage. View the docs
 	for more details about these
-*/ 
+*/
 Config::Set('FUEL_GET_LIVE_PRICE', true);
 Config::Set('FUEL_DEFAULT_PRICE', '5.10');
 Config::Set('FUEL_SURCHARGE', '5');
@@ -165,7 +165,7 @@ Config::Set('FUEL_SURCHARGE', '5');
 Config::Set('WeightUnit', '1');		# 0=Kg 1=lbs
 Config::Set('DistanceUnit', '2');   # 0=KM 1= Miles 2=NMiles
 Config::Set('SpeedUnit', '1');		# 0=Km/H 1=Kts
-Config::Set('AltUnit', '1');		# 0=Meter 1=Feet 
+Config::Set('AltUnit', '1');		# 0=Meter 1=Feet
 Config::Set('LiquidUnit', '3');		# 0=liter 1=gal 2=kg 3=lbs
 Config::Set('WelcomeMessage', 'phpVMS/FSPAX ACARS'); # Welcome Message
 Config::Set('LIQUID_UNIT_NAMES', array('liter','gal','kg', 'lbs'));
@@ -173,11 +173,11 @@ Config::Set('LIQUID_UNIT_NAMES', array('liter','gal','kg', 'lbs'));
 /* FSFK Settings
 	Your FTP Server, and path to the lib/images folder (from where the FTP connects from), IE
 	ftp://phpvms.net/phpvms/lib/fsfk or ftp://phpvms.net/public_html/phpvms/lib/fsfk
-	
-	You want the path from when you connect to the FTP down to where the /lib/fsfk folder is 
-    
+
+	You want the path from when you connect to the FTP down to where the /lib/fsfk folder is
+
     SECURITY NOTE! Make a separate FTP user and password ONLY for this, with access only to this folder
-    
+
 */
 Config::Set('FSFK_FTP_SERVER', '');
 Config::Set('FSFK_FTP_PORT', '21');
@@ -186,14 +186,14 @@ Config::Set('FSFK_FTP_PASS', '');
 Config::Set('FSFK_FTP_PASSIVE_MODE', 'TRUE');
 Config::Set('FSFK_IMAGE_PATH', '/lib/fsfk'); // web path from SITE_ROOT
 
-# Options for the signature that's generated 
+# Options for the signature that's generated
 Config::Set('SIGNATURE_TEXT_COLOR', '#000');
 Config::Set('SIGNATURE_USE_CUSTOM_FONT', true);
 Config::Set('SIGNATURE_FONT_PATH', SITE_ROOT.'/lib/fonts/tahoma.ttf');
 Config::Set('SIGNATURE_FONT_SIZE', '10');
 Config::Set('SIGNATURE_X_OFFSET', '10');
 Config::Set('SIGNATURE_Y_OFFSET', '17');
-Config::Set('SIGNATURE_FONT_PADDING', 4); 
+Config::Set('SIGNATURE_FONT_PADDING', 4);
 Config::Set('SIGNATURE_SHOW_EARNINGS', true);
 Config::Set('SIGNATURE_SHOW_RANK_IMAGE', true);
 Config::Set('SIGNATURE_SHOW_COPYRIGHT', true);
@@ -222,7 +222,7 @@ Config::Set('EMAIL_SMTP_USER', '');
 Config::Set('EMAIL_SMTP_PASS', '');
 
 # Set specific email addresses to send notifications to
-Config::Set('EMAIL_NEW_REGISTRATIONS', '');
+Config::Set('EMAIL_NEW_REGISTRATION', '');
 Config::Set('EMAIL_NEW_PIREP', '');
 
 # Whether to send an email or not
@@ -238,7 +238,7 @@ Config::Set('EMAIL_RETURN_PATH', '');
 	phpvms will use the phpVMS API server
 */
 
-Config::Set('AIRPORT_LOOKUP_SERVER', 'phpvms'); 
+Config::Set('AIRPORT_LOOKUP_SERVER', 'phpvms');
 Config::Set('PHPVMS_API_SERVER', 'http://api.phpvms.net');
 Config::Set('PHPVMS_NEWS_FEED', 'http://feeds.feedburner.com/phpvms');
 Config::Set('VACENTRAL_NEWS_FEED', 'http://feeds.feedburner.com/vacentral');
@@ -264,7 +264,7 @@ Config::Set('URL_REWRITE', false);
  */
 Config::Set('DAYS_COMPACT',  array('Su', 'M', 'T', 'W', 'Th', 'F', 'S', 'Su'));
 
-Config::Set('DAYS_LONG', 
+Config::Set('DAYS_LONG',
 	array('Sunday',
 		  'Monday',
 		  'Tuesday',
@@ -282,38 +282,38 @@ Config::Set('ADMIN_SKIN', 'layout');
 
 /**
  * *******************************************************
- * 
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
+ *
  * Advanced options, don't edit unless you
  * know what you're doing!!
- * 
+ *
  * Actually, don't change them, at all. Please.
  * For your sake. And mine. :)
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
- * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */
 
 $revision = trim(file_get_contents(CORE_PATH.'/version'));
@@ -326,14 +326,14 @@ Config::Set('CACHE_PATH', SITE_ROOT . '/core/cache');
 Config::Set('TPL_EXTENSION', '.tpl');
 Config::Set('BASE_TEMPLATE_PATH', SITE_ROOT.'/core/templates');
 
-if(defined('ADMIN_PANEL') && ADMIN_PANEL === true) {	
+if(defined('ADMIN_PANEL') && ADMIN_PANEL === true) {
 	Template::SetTemplatePath(SITE_ROOT.'/admin/templates');
-	
+
 	define('CODON_MODULES_PATH', SITE_ROOT.'/admin/modules');
 	define('CODON_DEFAULT_MODULE', 'Dashboard');
-} else {	
+} else {
 	Template::SetTemplatePath(Config::Get('BASE_TEMPLATE_PATH'));
-	
+
 	define('CODON_MODULES_PATH', SITE_ROOT.'/core/modules');
 	define('CODON_DEFAULT_MODULE', 'Frontpage');
 }
@@ -348,23 +348,23 @@ $cache_settings = array(
 		'default' => array(
 			'duration' => '+10 minutes',
 		),
-		
+
 		'short' => array(
 			'duration' => '+3 minutes',
 		),
-		
+
 		'15minute' => array(
 			'duration' => '+15 minutes',
 		),
-		
+
 		'medium' => array(
 			'duration' => '+1 hour',
 		),
-        
+
         'medium_well' => array(
 			'duration' => '+3 hour',
 		),
-		
+
 		'long' => array(
 			'duration' => '+6 hours'
 		),
@@ -397,36 +397,36 @@ Config::Set('CACHE_KEY_LIST', array(
 );
 
 Config::Set('TABLE_LIST', array(
-	'acarsdata', 
-	'adminlog', 
-	'aircraft', 
-	'airlines', 
-	'airports', 
-	'awards', 
+	'acarsdata',
+	'adminlog',
+	'aircraft',
+	'airlines',
+	'airports',
+	'awards',
 	'awardsgranted',
 	'bids',
 	'customfields',
-	'downloads', 
-	'expenselog', 
-	'expenses', 
-	'fieldvalues', 
-	'financedata', 
-	'fuelprices', 
-	'groupmembers', 
-	'groups', 
-	'navdata', 
-	'news', 
-	'pages', 
-	'pilots', 
-	'pirepcomments', 
-	'pirepfields', 
-	'pireps', 
-	'pirepvalues', 
-	'ranks', 
-	'schedules', 
-	'sessions', 
-	'settings', 
-	'updates' 
+	'downloads',
+	'expenselog',
+	'expenses',
+	'fieldvalues',
+	'financedata',
+	'fuelprices',
+	'groupmembers',
+	'groups',
+	'navdata',
+	'news',
+	'pages',
+	'pilots',
+	'pirepcomments',
+	'pirepfields',
+	'pireps',
+	'pirepvalues',
+	'ranks',
+	'schedules',
+	'sessions',
+	'settings',
+	'updates'
 	)
 );
 
@@ -441,19 +441,19 @@ Config::Set('VACENTRAL_DATA_FORMAT', 'json');
 /**
  * Constants
  *	Do not modify these! All sorts of weird shit can happen
- */ 
+ */
 # Set the type of flights we have
 Config::Set(
-	'FLIGHT_TYPES', array(	
+	'FLIGHT_TYPES', array(
 		'P'=>'Passenger',
 		'C'=>'Cargo',
 		'H'=>'Charter'
 	)
 );
-			
+
 # Set the types of expenses we have
 Config::Set(
-	'EXPENSE_TYPES', array( 
+	'EXPENSE_TYPES', array(
 		'M'=>'Monthly',
 		'F'=>'Per Flight',
 		'P'=>'Percent (month)',
@@ -464,14 +464,14 @@ Config::Set(
 
 /*  These are pilot statuses which can be selected in
     the admin panel. I would be weary of changing these!
-    
+
     Though you can safely change the name or messages or tweak
     the additional settings provided
  */
 Config::Set('PILOT_STATUS_TYPES', array(
 
     /* DO NOT CHANGE THIS ACTIVE NUMBER OR STATUS OR THINGS WILL BREAK!!! */
-    0 => array( 
+    0 => array(
         'name' => 'Active',             # The title to show in the dropdown
         'message' => '',                # Message to show if they can't login (below is false)
         'default' => true,              # Should this be their default status?
@@ -479,56 +479,56 @@ Config::Set('PILOT_STATUS_TYPES', array(
         'active' => true,               # Are they an active pilot?
         'autoretire' => false,          # Use this status for the auto-retire functionality
         'group_add' => array(           # ID or name of the group this user is added to with this status
-            'Active Pilots', 
-        ),      
+            'Active Pilots',
+        ),
         'group_remove' => array(        # ID or name of the groups this user is removed from with this status
-            'Inactive Pilots', 
-        ),   
+            'Inactive Pilots',
+        ),
     ),
-    
+
     /* DO NOT CHANGE THIS INACTIVE NUMBER OR STATUS OR THINGS WILL BREAK!!! */
     1 => array(
         'name' => 'Inactive',
         'message' => 'Your account was marked inactive',
-        'default' => false, 
-        'canlogin' => false,
-        'active' => false,
-        'autoretire' => false,
-        'group_add' => array(          
-            'Inactive Pilots',  
-        ),      
-        'group_remove' => array(       
-            'Active Pilots',
-        ),
-    ),
-    
-    2 => array(
-        'name' => 'Banned',
-        'message' => 'Your account is banned, please contact an admin!',
-        'default' => false, 
+        'default' => false,
         'canlogin' => false,
         'active' => false,
         'autoretire' => false,
         'group_add' => array(
-            'Inactive Pilots', 
-        ),  
+            'Inactive Pilots',
+        ),
         'group_remove' => array(
-            'Active Pilots', 
+            'Active Pilots',
         ),
     ),
-    
+
+    2 => array(
+        'name' => 'Banned',
+        'message' => 'Your account is banned, please contact an admin!',
+        'default' => false,
+        'canlogin' => false,
+        'active' => false,
+        'autoretire' => false,
+        'group_add' => array(
+            'Inactive Pilots',
+        ),
+        'group_remove' => array(
+            'Active Pilots',
+        ),
+    ),
+
     3 => array(
         'name' => 'On Leave',
         'message' => 'You have been marked as on leave',
-        'default' => false, 
+        'default' => false,
         'canlogin' => true,
         'active' => false,
         'autoretire' => true,
         'group_add' => array(
-            'Inactive Pilots', 
-        ),  
+            'Inactive Pilots',
+        ),
         'group_remove' => array(
-            'Active Pilots', 
+            'Active Pilots',
         ),
     ),
 ));
@@ -542,7 +542,7 @@ define('PIREP_ACCEPTED', 1);
 define('PIREP_REJECTED', 2);
 define('PIREP_INPROGRESS', 3);
 
-# Pilot Registration 
+# Pilot Registration
 define('PILOT_PENDING', 0);
 define('PILOT_ACCEPTED', 1);
 define('PILOT_REJECTED', 2);
@@ -580,15 +580,15 @@ define('VMS_AUTH_COOKIE', 'VMSAUTH');
 /**
  * Library Includes (from 3rd Party)
  */
- 
+
 # Bit-masks for permission sets
 $permission_set = array(
 	/*'NO_ADMIN_ACCESS'			=> 0,*/
-	'ACCESS_ADMIN'				=> 0x1, 
-	'EDIT_NEWS'				    => 0x2, 
-	'EDIT_PAGES'				=> 0x4, 
+	'ACCESS_ADMIN'				=> 0x1,
+	'EDIT_NEWS'				    => 0x2,
+	'EDIT_PAGES'				=> 0x4,
 	'EDIT_DOWNLOADS'			=> 0x8,
-	'EMAIL_PILOTS'              => 0x10, 
+	'EMAIL_PILOTS'              => 0x10,
 	'EDIT_AIRLINES'             => 0x20,
 	'EDIT_FLEET'				=> 0x40,
 	'EDIT_SCHEDULES'			=> 0x80,
@@ -615,11 +615,11 @@ $permission_set = array(
 # Discriptions for permission sets
 $permission_discription = array(
 	/*'NO_ADMIN_ACCESS'			=> 0,*/
-	'ACCESS_ADMIN'				=> 'Give a user access to the administration panel. This is required if any other permissions are set.', 
-	'EDIT_NEWS'				    => '(News &amp; Content) Give a user access to add &amp; edit the news &amp; notams.', 
-	'EDIT_PAGES'				=> '(News &amp; Content) Give a user access to add &amp; edit the pages.', 
+	'ACCESS_ADMIN'				=> 'Give a user access to the administration panel. This is required if any other permissions are set.',
+	'EDIT_NEWS'				    => '(News &amp; Content) Give a user access to add &amp; edit the news &amp; notams.',
+	'EDIT_PAGES'				=> '(News &amp; Content) Give a user access to add &amp; edit the pages.',
 	'EDIT_DOWNLOADS'			=> '(News &amp; Content) Give a user access to add &amp; edit the downloads.',
-	'EMAIL_PILOTS'              => '(News &amp; Content) Give a user access to email your pilots.', 
+	'EMAIL_PILOTS'              => '(News &amp; Content) Give a user access to email your pilots.',
 	'EDIT_AIRLINES'             => '(Airline Operations) Give a user access to add &amp; edit your airlines.',
 	'EDIT_FLEET'				=> '(Airline Operations) Give a user access to add &amp; edit your fleet.',
 	'EDIT_SCHEDULES'			=> '(Airline Operations) Give a user access to add &amp; edit schedules.',
@@ -642,8 +642,8 @@ $permission_discription = array(
     //'CUSTOM_PERM3'              => 'Custom Discription of the permission',
     'FULL_ADMIN'				=> 'Full Administration Over-ride. This option will automatically overide all above settings, enabling all of them.'
 );
-Config::Set('permission_set', $permission_set);  
-Config::Set('permission_discription', $permission_discription);  
+Config::Set('permission_set', $permission_set);
+Config::Set('permission_discription', $permission_discription);
 define('NO_ADMIN_ACCESS', 0);
 foreach($permission_set as $key=>$value) {
 	define($key, $value);

@@ -9,34 +9,34 @@ if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_NEWS)
 )
 {
 ?>
-<li style="padding: 0; margin; 0;"><a class="menu" href="#">
+<li style="padding: 0; margin: 0;"><a class="menu" href="#">
 	<img src="<?php echo fileurl('/admin/lib/layout/images/site_icon.png');?>" />News & Content
 	</a>
 	<ul style="padding: 0; margin: 0;">
-		<?php 
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_NEWS)) 
-		{ 
+		<?php
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_NEWS))
+		{
 		?>
 		<li><a href="<?php echo adminurl('/sitecms/viewnews'); ?>">News</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_PAGES)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_PAGES))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/sitecms/viewpages');?>">Pages</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_DOWNLOADS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_DOWNLOADS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/downloads/overview'); ?>">Downloads</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EMAIL_PILOTS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EMAIL_PILOTS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/massmailer');?>">Email all Pilots</a></li>
-		<?php 
+		<?php
 		}
 		?>
 		<li></li>
@@ -57,36 +57,36 @@ if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_AIRLINES)
 	</a>
 	<ul style="padding: 0; margin: 0;">
 		<?php
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_AIRLINES)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_AIRLINES))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/operations/airlines');?>">Add & Edit Airlines</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_FLEET)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_FLEET))
 		{
 		?>
 			<li><a href="<?php echo adminurl('/operations/aircraft');?>">Add & Edit Fleet</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_SCHEDULES)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_SCHEDULES))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/operations/airports');?>">Add & Edit Airports</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_SCHEDULES)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_SCHEDULES))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/operations/schedules');?>">Flight Schedules & Routes</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, IMPORT_SCHEDULES)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, IMPORT_SCHEDULES))
 		{
 		?>
 			<li><a href="<?php echo adminurl('/import');?>">Import Schedules</a></li>
 			<li><a href="<?php echo adminurl('/import/export');?>">Export Schedules</a></li>
-		<?php 
+		<?php
 		}
 		?>
 	</ul>
@@ -101,60 +101,60 @@ if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS)
 	|| PilotGroups::group_has_perm(Auth::$usergroups, EDIT_RANKS)
 	|| PilotGroups::group_has_perm(Auth::$usergroups, EMAIL_PILOTS)
 	|| PilotGroups::group_has_perm(Auth::$usergroups, EDIT_AWARDS)
-) 
+)
 {
 	?>
 <li style="padding: 0; margin: 0;"><a class="menu" href="#">
 	<img src="<?php echo  SITE_URL?>/admin/lib/layout/images/pilots_icon.png" />Pilots & Groups</a>
 	<ul style="padding: 0; margin: 0;">
 		<?php
-		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_REGISTRATIONS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_REGISTRATIONS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/pilotadmin/pendingpilots');?>">Pending Registrations</a></li>
 		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_PILOTS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_PILOTS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/pilotadmin/viewpilots');?>">View All Pilots</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_GROUPS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_GROUPS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/pilotadmin/pilotgroups');?>">Pilot Groups</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_RANKS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_RANKS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/pilotranking/pilotranks');?>">Pilot Ranks</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EMAIL_PILOTS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EMAIL_PILOTS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/massmailer'); ?>">Email all Pilots</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_AWARDS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_AWARDS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/pilotranking/awards'); ?>">Awards</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, FULL_ADMIN)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, FULL_ADMIN))
 		{
 		?>
 			<li><a href="<?php echo adminurl('/maintenance/changepilotid'); ?>">Change a Pilot's ID</a></li>
-			<?php 
+			<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/pilotadmin/viewbids'); ?>">View Bids</a></li>
-		<?php 
+		<?php
 		}
 		?>
 		<li></li>
@@ -171,30 +171,30 @@ if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS)
 <li style="padding: 0; margin: 0;"><a class="menu" href="#">
 	<img src="<?php echo  SITE_URL?>/admin/lib/layout/images/pireps_icon.png" />Pilot Reports (PIREPS)</a>
 	<ul style="padding: 0; margin: 0;">
-		<?php 
-		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS)) 
+		<?php
+		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/pirepadmin/viewpending'); ?>">View Pending</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/pirepadmin/viewrecent'); ?>">View Recent Reports</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/pirepadmin/viewall'); ?>">View All Reports</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_PIREPS_FIELDS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_PIREPS_FIELDS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/settings/pirepfields'); ?>">PIREP Fields</a></li>
-		<?php 
+		<?php
 		}
 		?>
 		<li></li>
@@ -212,20 +212,20 @@ if(PilotGroups::group_has_perm(Auth::$usergroups, VIEW_FINANCES)
 	<img src="<?php echo  SITE_URL?>/admin/lib/layout/images/reports_icon.png" />Reports & Expenses</a>
 	<ul style="padding: 0; margin: 0;">
 		<?php
-		if(PilotGroups::group_has_perm(Auth::$usergroups, VIEW_FINANCES)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, VIEW_FINANCES))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/reports/overview'); ?>">Overview</a></li>
 		<li><a href="<?php echo adminurl('/finance/viewcurrent'); ?>">Financial Reports</a></li>
 		<li><a href="<?php echo adminurl('/reports/aircraft'); ?>">Aircraft Reports</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_EXPENSES)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_EXPENSES))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/finance/viewexpenses'); ?>">Expenses</a></li>
-		<?php 
-		} 
+		<?php
+		}
 		?>
 		<li></li>
 	</ul>
@@ -241,30 +241,30 @@ if(PilotGroups::group_has_perm(Auth::$usergroups, FULL_ADMIN)
 <li style="padding: 0; margin: 0;"><a class="menu" href="#">
 	<img src="<?php echo  SITE_URL?>/admin/lib/layout/images/settings_icon.gif" />Site & Settings</a>
 	<ul style="padding: 0; margin: 0;">
-		<?php 
-		if(PilotGroups::group_has_perm(Auth::$usergroups, FULL_ADMIN)) 
+		<?php
+		if(PilotGroups::group_has_perm(Auth::$usergroups, FULL_ADMIN))
 		{
 ?>
 		<li><a href="<?php echo adminurl('/settings'); ?>">General Settings</a></li>
 		<li><a href="<?php echo adminurl('/maintenance/options'); ?>">Maintenance Options</a></li>
 		<li><a href="<?php echo adminurl('/logs'); ?>">Admin Activity Logs</a></li>
 		<li><a href="<?php echo adminurl('/templatediffs');?>">Template Diffs</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_PROFILE_FIELDS)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, EDIT_PROFILE_FIELDS))
 		{
 		?>
 		<li><a href="<?php echo adminurl('/settings/customfields'); ?>">Profile Fields</a></li>
-		<?php 
+		<?php
 		}
-		if(PilotGroups::group_has_perm(Auth::$usergroups, FULL_ADMIN)) 
+		if(PilotGroups::group_has_perm(Auth::$usergroups, FULL_ADMIN))
 		{
 		?>
 		<?php
 		if(Config::Get('PHPVMS_CENTRAL_ENABLED') == true || Config::Get('VACENTRAL_ENABLED') == true )
 			echo '<li><a href="'.adminurl('/vacentral').'">vaCentral Settings</a></li>';
 		?>
-		<?php 
+		<?php
 		}
 		?>
 		<li><a href="<?php echo adminurl('/dashboard/about');?>">About phpVMS</a></li>
@@ -274,7 +274,7 @@ if(PilotGroups::group_has_perm(Auth::$usergroups, FULL_ADMIN)
 <?php
 }
 ?>
-<?php 
+<?php
 if(strlen($MODULE_NAV_INC) > 0)
 {
 ?>
