@@ -32,22 +32,24 @@ class ChartsData extends CodonData    {
             $dataPoint = array();
             $data = PIREPData::getIntervalDataByDays(array('p.pilotid'=>$pilotid), $days);
 
-            foreach($data as $dat)  {
+            if($data)   {
+                foreach($data as $dat)  {
 
-                $points[] = $dat->total;
-                #get highest y-axis value for chart
-                if($dat->total > $total)    {
-                    $yTotal = $dat->total;
+                    $points[] = $dat->total;
+                    #get highest y-axis value for chart
+                    if($dat->total > $total)    {
+                        $yTotal = $dat->total;
+                    }
+                    $date = '';
+                    $date = explode('-', $dat->ym);
+                    $labels[] = $date[1].'-'.$date[2];
+                    $xTotal++;
+
+                    $z = '';
+                    $z->label = $date[1].'-'.$date[2];
+                    $z->point = $dat->total;
+                    $dataPoint[] = $z;
                 }
-                $date = '';
-                $date = explode('-', $dat->ym);
-                $labels[] = $date[1].'-'.$date[2];
-                $xTotal++;
-
-                $z = '';
-                $z->label = $date[1].'-'.$date[2];
-                $z->point = $dat->total;
-                $dataPoint[] = $z;
             }
 
             $fLabels = array();
