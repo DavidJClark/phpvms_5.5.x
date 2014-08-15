@@ -70,6 +70,13 @@ ob_start();
 MainController::RunAllActions();
 $page_content = ob_get_clean();
 
+// http://blogs.msdn.com/b/ieinternals/archive/2010/03/30/combating-clickjacking-with-x-frame-options.aspx?Redirected=true
+header('X-Frame-Options: SAMEORIGIN');
+// http://blogs.msdn.com/b/ieinternals/archive/2011/01/31/controlling-the-internet-explorer-xss-filter-with-the-x-xss-protection-http-header.aspx
+header('X-XSS-Protection: 1');
+// http://msdn.microsoft.com/en-us/library/ie/gg622941(v=vs.85).aspx
+header('X-Content-Type-Options: nosniff');
+
 $BaseTemplate->Set('title', MainController::$page_title .' - '.SITE_NAME);
 $BaseTemplate->Set('page_title', MainController::$page_title .' - '.SITE_NAME);
 
