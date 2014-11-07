@@ -11,7 +11,7 @@
  *   Creative Commons Attribution Non-commercial Share Alike (by-nc-sa)
  *   View license.txt in the root, or visit http://creativecommons.org/licenses/by-nc-sa/3.0/
  *
- * @author Nabeel Shahzad 
+ * @author Nabeel Shahzad
  * @copyright Copyright (c) 2008, Nabeel Shahzad
  * @link http://www.phpvms.net
  * @license http://creativecommons.org/licenses/by-nc-sa/3.0/
@@ -135,7 +135,7 @@ class OFCharts extends CodonData {
      * @param string $title Title of the graph
      * @param array $values Array of values
      * @param array $titles Array of titles
-     * @return none 
+     * @return none
      *
      */
     public static function create_line_graph($title) {
@@ -175,7 +175,7 @@ class OFCharts extends CodonData {
         self::show_chart($title);
     }
 
-    protected function show_chart($title) {
+    protected static function show_chart($title) {
         $title = new title($title);
 
         self::$chart->set_title($title);
