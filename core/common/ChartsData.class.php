@@ -45,7 +45,7 @@ class ChartsData extends CodonData    {
                     $labels[] = $date[1].'-'.$date[2];
                     $xTotal++;
 
-                    $z = '';
+                    $z = new stdClass();
                     $z->label = $date[1].'-'.$date[2];
                     $z->point = $dat->total;
                     $dataPoint[] = $z;
