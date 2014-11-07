@@ -2,14 +2,12 @@ phpVMS - Virtual Airline Administration Software
  Copyright (c) 2008 Nabeel Shahzad
 
  phpVMS is licenced under the following license:
-   Creative Commons Attribution Non-commercial Share Alike (by-nc-sa)
-   View license.txt in the root, or visit:
-	http://creativecommons.org/licenses/by-nc-sa/3.0/
+   BSD 3-clause (per https://github.com/nshahzad/phpVMS/commit/e031365125668f6f7d9c92e8c284b2be14b61b2b)
 ---
 
 INSTALLATION
 
-Upload to your site, create a database. Run the installer 
+Upload to your site, create a database. Run the installer
  in install/install.php
 
 ---
@@ -17,7 +15,7 @@ Upload to your site, create a database. Run the installer
 UPGRADING
 
 Backup your core/local.config.php. Then, upload all of the files.
- Restore your core/local.config.php file. Run the updater in 
+ Restore your core/local.config.php file. Run the updater in
  install/update.php
 
 ---
