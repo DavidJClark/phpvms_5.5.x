@@ -1,14 +1,14 @@
 <?php if(!defined('IN_PHPVMS') && IN_PHPVMS !== true) { die(); } ?>
 <h3>Search Schedules</h3>
-<form id="form" action="<?php echo actionurl('/schedules/view');?>" method="post">
+<form id="form" action="<?php echo url('/schedules/view');?>" method="post">
 
 <div id="tabcontainer">
 	<ul>
-        
+
 		<li><a href="#depapttab"><span>By Departure Airport</span></a></li>
 		<li><a href="#arrapttab"><span>By Arrival Airport</span></a></li>
 		<li><a href="#airlinetab"><span>By Airline</span></a></li>
-        <li><a href="#aircrafttab"><span>By Aircraft Type</span></a></li>
+                <li><a href="#aircrafttab"><span>By Aircraft Type</span></a></li>
 		<li><a href="#distance"><span>By Distance</span></a></li>
 	</ul>
 	<div id="depapttab">
@@ -17,13 +17,13 @@
 		<option value="">Select All</option>
 		<?php
 		if(!$depairports) $depairports = array();
-        
+
 		foreach($depairports as $airport) {
 			echo '<option value="'.$airport->icao.'">'.$airport->icao
 					.' ('.$airport->name.')</option>';
 		}
 		?>
-			
+
 		</select>
 		<input type="submit" name="submit" value="Find Flights" />
 	</div>
@@ -33,13 +33,13 @@
 			<option value="">Select All</option>
 		<?php
 		if(!$depairports) $depairports = array();
-        
+
 		foreach($depairports as $airport) {
 			echo '<option value="'.$airport->icao.'">'.$airport->icao
 					.' ('.$airport->name.')</option>';
 		}
 		?>
-			
+
 		</select>
 		<input type="submit" name="submit" value="Find Flights" />
 	</div>
@@ -51,11 +51,11 @@
 		if(!$aircraft_list) {
             $aircraft_list = array();
 		}
-        
+
 		foreach($aircraft_list as $aircraft) {
 			echo '<option value="'.$aircraft->name.'">'.$aircraft->name.'</option>';
 		}
-		
+
 		?>
 		</select>
 		<input type="submit" name="submit" value="Find Flights" />
@@ -70,9 +70,9 @@
             echo '<option value="'.$airline->code.'">'.$airline->name.'</option>';
         }
         ?>
-        
+
         </select>
-        
+
         <input type="submit" name="submit" value="Find Flights" />
     </div>
 	<div id="distance">
