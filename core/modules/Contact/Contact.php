@@ -16,15 +16,20 @@
  * @license http://creativecommons.org/licenses/by-nc-sa/3.0/
  */
 
-class Contact extends CodonModule 
+class Contact extends CodonModule
 {
 	public function index()
 	{
+                //Google reCaptcha
+                //updated to Google noCaptcha 1/15
 		require_once CORE_LIB_PATH.'/recaptcha/recaptchalib.php';
+
+                $this->set('sitekey', RECAPTCHA_PUBLIC_KEY);
+                $this->set('lang', 'en');
 
 
 		if($this->post->submit)	{
-			if(Auth::LoggedIn() == false) {					
+			if(Auth::LoggedIn() == false) {
 				# Make sure they entered an email address
 				if(trim($this->post->name) == '' || trim($this->post->email) == '') {
 					$this->set('message', 'You must enter a name and email!');
@@ -32,59 +37,49 @@ class Contact extends CodonModule
 					return;
 				}
 			}
-			
-			$resp = recaptcha_check_answer (Config::Get('RECAPTCHA_PRIVATE_KEY'),
-				$_SERVER["REMOTE_ADDR"],
-				$_POST["recaptcha_challenge_field"],
-				$_POST["recaptcha_response_field"]);
-			
-			// Check the captcha thingy
-			if(!$resp->is_valid) {
-				$this->set('captcha_error', $resp->error);
-				$this->set('message', 'You failed the captcha test!');
-				$this->render('contact_form.tpl');
-				return;
-			}
-			
+
+                        //Google reCaptcha
+                        //updated to Google noCaptcha 1/15
+                        $resp = null;
+                        $reCaptcha = new ReCaptcha(RECAPTCHA_PRIVATE_KEY);
+                        // Was there a reCAPTCHA response?
+                        if ($_POST["g-recaptcha-response"]) {
+                                $resp = $reCaptcha->verifyResponse(
+                                $_SERVER["REMOTE_ADDR"],
+                                $_POST["g-recaptcha-response"]
+                            );
+                        }
+
+                        //check if reCaptcha response was valid
+                        if ($resp == null) {
+                            $this->set('captcha_error', 'reCaptcha Validation Error');
+                            $this->render('contact_form.tpl');
+                            return;
+                        }
+                        //end Google reCaptcha
+
 			if($this->post->subject == '' || trim($this->post->message) == '') {
 				$this->set('message', 'You must enter a subject and message!');
 				$this->render('core_error.tpl');
 				return;
 			}
-			
+
 			$subject = 'New message from '.$this->post->name.' - "'.$this->post->subject.'"';
 			$message = DB::escape($this->post->message) . PHP_EOL . PHP_EOL;
-			
-			unset($_POST['recaptcha_challenge_field']);
-			unset($_POST['recaptcha_response_field']);
-			
+
 			foreach($_POST as $field=>$value) {
 				$message.="-$field = $value".PHP_EOL;
 			}
-			
+
 			$message = nl2br($message);
 			$message = utf8_encode($message);
 			Util::SendEmail(ADMIN_EMAIL, $subject, $message);
-			
+
 			$this->render('contact_sent.tpl');
 			return;
-		}		
-		
-		# Just a simple addition
-		$rand1 = rand(1, 10);
-		$rand2 = rand(1, 10);
-		
-		$this->set('rand1', $rand1);
-		$this->set('rand2', $rand2);		
-		
-		$tot = $rand1 + $rand2;
-		//echo "total: $tot <br />";
-		SessionManager::Set('captcha_sum', $tot);
-		
-		//echo 'output of $_SESSION: <br />';
-		//print_r($_SESSION);
-		
+		}
+
 		$this->render('contact_form.tpl');
 	}
-	
+
 }

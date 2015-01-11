@@ -9,8 +9,8 @@
 		if(Auth::LoggedIn())
 		{
 			echo Auth::$userinfo->firstname .' '.Auth::$userinfo->lastname;
-			echo '<input type="hidden" name="name" 
-					value="'.Auth::$userinfo->firstname 
+			echo '<input type="hidden" name="name"
+					value="'.Auth::$userinfo->firstname
 							.' '.Auth::$userinfo->lastname.'" />';
 		}
 		else
@@ -29,7 +29,7 @@
 		if(Auth::LoggedIn())
 		{
 			echo Auth::$userinfo->email;
-			echo '<input type="hidden" name="name" 
+			echo '<input type="hidden" name="name"
 					value="'.Auth::$userinfo->email.'" />';
 		}
 		else
@@ -45,7 +45,7 @@
 	<tr>
 		<td><strong>Subject: </strong></td>
 		<td><input type="text" name="subject" value="<?php echo $_POST['subject'];?>" /></td>
-	
+
 	</tr>
     <tr>
       <td><strong>Message:</strong></td>
@@ -53,16 +53,17 @@
 		<textarea name="message" cols='45' rows='5'><?php echo $_POST['message'];?></textarea>
       </td>
     </tr>
-    
+
     <tr>
 		<td width="1%" nowrap><strong>Captcha</strong></td>
 		<td>
-		<?php
-		echo recaptcha_get_html(Config::Get('RECAPTCHA_PUBLIC_KEY'), $captcha_error);
-		?>
+                    <?php if(isset($captcha_error)){echo '<p class="error">'.$captcha_error.'</p>';} ?>
+                    <div class="g-recaptcha" data-sitekey="<?php echo $sitekey;?>"></div>
+                    <script type="text/javascript" src="https://www.google.com/recaptcha/api.js?hl=<?php echo $lang;?>">
+                    </script>
 		</td>
 	</tr>
-	
+
     <tr>
 		<td>
 			<input type="hidden" name="loggedin" value="<?php echo (Auth::LoggedIn())?'true':'false'?>" />
