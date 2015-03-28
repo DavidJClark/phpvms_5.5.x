@@ -1,6 +1,7 @@
 # phpVMS htaccess file
 # You can add additional rules here, just Google search em...
 
+
 Options +FollowSymLinks
 Options All -Indexes 
 
