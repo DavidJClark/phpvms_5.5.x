@@ -121,17 +121,17 @@ class CodonModule
      * @param $permission array bitwise
      *          Can be a single permission constant defined on app.config.php or an array of permissions.
      */
-    public function checkPermission($permission){
+    public static function checkPermission($permission){
         if(is_array($permission)){
             foreach($permission as $perm){
-                $this->checkPerm($perm);
+                self::checkPerm($perm);
             }
         }else{
-            $this->checkPerm($permission);
+            self::checkPerm($permission);
         }
     }
 
-    private function checkPerm($perm){
+    private static function checkPerm($perm){
         if(!PilotGroups::group_has_perm(Auth::$usergroups, $perm)) {
         	Debug::showCritical('Unauthorized access - Invalid Permissions.');
         	die();

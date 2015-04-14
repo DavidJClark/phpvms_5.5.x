@@ -34,7 +34,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function index() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         $this->options();
     }
 
@@ -44,7 +44,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function options() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         $this->render('maintenance_options.php');
     }
 
@@ -54,7 +54,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function resetdistances() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         echo '<h3>Updating and Calculating Distances</h3>';
 
         # Update all of the schedules
@@ -113,7 +113,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public static function resetpirepcount() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         
         echo '<h3>Reset PIREP Counts</h3>';
         $all_pilots = PilotData::findPilots(array());
@@ -141,8 +141,8 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function changepilotid() {
-        $this->checkPermission(MAINTENANCE);
-        $this->checkPermission(EDIT_PILOTS);
+        CodonModule::checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(EDIT_PILOTS);
         echo '<h3>Change Pilot ID</h3>';
 
         if (isset($this->post->submit)) {
@@ -202,7 +202,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function optimizetables() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         echo '<h3>Optimizing Tables...</h3>';
         $results = MaintenanceData::optimizeTables();
 
@@ -217,7 +217,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function resetacars() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         echo '<h3>ACARS Reset</h3>';
 
         ACARSData::resetFlights();
@@ -230,7 +230,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function clearcache() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         echo '<h3>Clearing Cache</h3>';
 
         $dir_iterator = new RecursiveDirectoryIterator(CACHE_PATH);
@@ -257,7 +257,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function calculateranks() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         echo '<h3>Resetting Ranks</h3>';
         RanksData::CalculatePilotRanks();
         echo 'Done!';
@@ -271,7 +271,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function resetpilotpay() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         
         echo '<h3>Resetting Pilot Pay</h3>';
         $allpilots = PilotData::GetAllPilots();
@@ -297,7 +297,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function resetsignatures() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         $allpilots = PilotData::GetAllPilots();
 
         echo '<h3>Regenerating signatures</h3>
@@ -319,7 +319,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function resethours() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         echo '<h3>Updating Total Hours Count</h3>';
 
         $total = 0;
@@ -348,7 +348,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function resetpirepfinance() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         echo '<h3>Reset PIREP Data</h3> 
 				Resetting PIREPs...<br />';
 
@@ -365,7 +365,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function resetscheduleroute() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         echo '<h3>Reset cached schedule routes</h3> 
 				Resetting... <br />';
 
@@ -382,7 +382,7 @@ class Maintenance extends CodonModule {
      * @return
      */
     public function resetpireproute() {
-        $this->checkPermission(MAINTENANCE);
+        CodonModule::checkPermission(MAINTENANCE);
         echo '<h3>Reset cached PIREP routes</h3> 
 				Resetting... <br />';
 
