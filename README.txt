@@ -1,3 +1,8 @@
+Updated version of phpVMS maintained by David Clark/Simpilotgroup
+
+Current 5.5.2 release stable on php 5.5.12 environment.
+
+---
 phpVMS - Virtual Airline Administration Software
  Copyright (c) 2008 Nabeel Shahzad
 
@@ -7,19 +12,6 @@ phpVMS - Virtual Airline Administration Software
 
 INSTALLATION
 
-Upload to your site, create a database. Run the installer
- in install/install.php
+Upload to your site, create a database. Run the installer in install/install.php
 
 ---
-
-UPGRADING
-
-Backup your core/local.config.php. Then, upload all of the files.
- Restore your core/local.config.php file. Run the updater in
- install/update.php
-
----
-
- For more information, visit www.phpvms.net
-	Forums: http://forum.phpvms.net
-	Documentation: http://docs.phpvms.net
