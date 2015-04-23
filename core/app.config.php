@@ -189,7 +189,7 @@ Config::Set('FSFK_IMAGE_PATH', '/lib/fsfk'); // web path from SITE_ROOT
 # Options for the signature that's generated
 Config::Set('SIGNATURE_TEXT_COLOR', '#000');
 Config::Set('SIGNATURE_USE_CUSTOM_FONT', true);
-Config::Set('SIGNATURE_FONT_PATH', SITE_ROOT.'/lib/fonts/tahoma.ttf');
+Config::Set('SIGNATURE_FONT_PATH', SITE_ROOT.'/lib/fonts/Silkscreen.ttf');
 Config::Set('SIGNATURE_FONT_SIZE', '10');
 Config::Set('SIGNATURE_X_OFFSET', '10');
 Config::Set('SIGNATURE_Y_OFFSET', '17');
