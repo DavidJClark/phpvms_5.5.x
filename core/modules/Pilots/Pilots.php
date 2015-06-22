@@ -19,6 +19,7 @@
 class Pilots extends CodonModule
 {
 	
+	public $title = 'Pilots';
 	/**
 	 * Pilots::index()
 	 * 
