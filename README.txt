@@ -4,10 +4,7 @@ Current 5.5.2 release stable on php 5.5.12 environment.
 
 --------------------------------CAUTION-------------------------------------------
 
-This version is not for the faint of heart. If you have modules and other addons that worked on older releases of phpVMS
-they will most likely break in this version. There are numerous changes. I HIGHLY suggest you look through the commits
-on both the original phpVMS github repository as well as this one prior to updating. The phpVMS forum also
-holds a lot of information about using phpVMS and modules in php versions past 5.3.
+This version is not for the faint of heart. If you have modules and other addons that worked on older releases of phpVMS they will most likely break in this version. There are numerous changes. I HIGHLY suggest you look through the commits on both the original phpVMS github repository as well as this one prior to updating. The phpVMS forum also holds a lot of information about using phpVMS and modules in php versions past 5.3.
 
 ---------------------------------------------------------------------------------
 
