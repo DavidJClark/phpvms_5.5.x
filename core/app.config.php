@@ -239,7 +239,7 @@ Config::Set('EMAIL_RETURN_PATH', '');
 */
 
 Config::Set('AIRPORT_LOOKUP_SERVER', 'phpvms');
-Config::Set('PHPVMS_API_SERVER', 'http://api.phpvms.net');
+Config::Set('PHPVMS_API_SERVER', 'http://api.vacentral.net');
 Config::Set('PHPVMS_NEWS_FEED', 'http://feeds.feedburner.com/phpvms');
 Config::Set('VACENTRAL_NEWS_FEED', 'http://feeds.feedburner.com/vacentral');
 Config::Set('GEONAME_API_SERVER', 'http://ws.geonames.org');
@@ -434,7 +434,7 @@ Config::Set('TABLE_LIST', array(
 Config::Set('VACENTRAL_ENABLED', false);
 Config::Set('VACENTRAL_DEBUG_MODE', false);
 Config::Set('VACENTRAL_DEBUG_DETAIL', 0);
-Config::Set('VACENTRAL_API_SERVER', 'http://api.phpvms.net');
+Config::Set('VACENTRAL_API_SERVER', 'http://api.vacentral.net');
 Config::Set('VACENTRAL_API_KEY', '');
 Config::Set('VACENTRAL_DATA_FORMAT', 'json');
 
