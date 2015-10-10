@@ -22,7 +22,7 @@ $("#grid").jqGrid({
 		{index: 'lastname', name : 'lastname',  sortable : true, align: 'left', searchoptions:{sopt:['in']}},
 		{index: 'email', name : 'email', sortable : true, align: 'left',searchoptions:{sopt:['li']}},
 		{index: 'location', name : 'location',  sortable : true, align: 'center',searchoptions:{sopt:['eq','ne']}},
-		{index: 'status', name : 'status', sortable : true, align: 'center',searchoptions:{sopt:['in']}},
+		{index: 'retired', name : 'status', sortable : true, align: 'center',searchoptions:{sopt:['in']}},
 		{index: 'rank', name : 'rank', sortable : true, align: 'center', searchoptions:{sopt:['eq','ne']}},
 		{index: 'totalflights', name : 'totalflights', sortable : true, align: 'center',searchoptions:{sopt:['lt','gt']}},
 		{index: 'totalhours', name : 'totalhours', sortable : true, align: 'center',searchoptions:{sopt:['lt','gt']}},
