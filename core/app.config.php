@@ -96,6 +96,9 @@ Config::Set('SCHEDULES_ORDER_BY', 's.flightnum ASC');
 /* For PIREPS_ORDER_BY use p.[column_name] [ASC/DESC] */
 Config::Set('PIREPS_ORDER_BY', 'p.submitdate DESC');
 
+/* For PILOTS_ORDER_BY use p.[column_name] [ASC/DESC] */
+Config::Set('PILOT_ORDER_BY', 'p.joindate ASC');
+
 # If someone places a bid, whether to disable that or not
 Config::Set('DISABLE_SCHED_ON_BID', true);
 Config::Set('DISABLE_BIDS_ON_BID', false);
