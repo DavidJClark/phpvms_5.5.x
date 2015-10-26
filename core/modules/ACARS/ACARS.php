@@ -173,7 +173,7 @@ class ACARS extends CodonModule
 		if(!Auth::LoggedIn())
 		{
 			echo 'You are not logged in!';
-			break;
+			exit;
 		}
 
 		$this->set('pilotcode', PilotData::GetPilotCode(Auth::$pilot->code, Auth::$pilot->pilotid));
