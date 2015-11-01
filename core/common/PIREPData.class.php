@@ -306,7 +306,7 @@ class PIREPData extends CodonData {
      */
     public static function getReportDetails($pirepid) {
         
-        $sql = 'SELECT p.*, s.*, s.id AS scheduleid, p.route, p.route_details,
+        $sql = 'SELECT p.*, s.*, s.id AS scheduleid, p.route, p.route_details, p.rawdata,
 					u.pilotid, u.firstname, u.lastname, u.email, u.rank, u.code AS pcode,
 					dep.name as depname, dep.lat AS deplat, dep.lng AS deplng,
 					arr.name as arrname, arr.lat AS arrlat, arr.lng AS arrlng,
