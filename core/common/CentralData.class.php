@@ -536,7 +536,8 @@ class CentralData extends CodonData {
             'source' => $pirep->source,
             'revenue' => $pirep->revenue,
             'source' => $pirep->source,
-            'landingrate' => $pirep->landingrate
+            'landingrate' => $pirep->landingrate,
+            'log' => $pirep->log
         ));
     }
 
