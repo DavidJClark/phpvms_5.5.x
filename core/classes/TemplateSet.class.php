@@ -114,7 +114,7 @@ class TemplateSet {
     public function set($name, $value) {
         // See if they're setting the template as a file
         //	Check if the file exists
-        if (is_string($value) && $value != '' && substr_count($value, $this->tpl_ext."\n\r") > 0) {
+        if (is_string($value) && $value != '' && substr($value, -3) == $this->tpl_ext) {
             if (file_exists($this->template_path . DS . $value)) {
                 $value = $this->getTemplate($value, true);
             }
