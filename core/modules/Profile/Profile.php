@@ -80,7 +80,7 @@ class Profile extends CodonModule
 	public function view($pilotid='')
 	{
             #replacement for OFC charts - Google Charts API - simpilot
-            $this->set('chart_url', ChartsData::build_pireptable($pilotid, 30));
+            $this->set('chart_url', ChartsData::build_pireptable(PilotData::parsePilotID($pilotid), 30));
             #end
 
             $pilotid = PilotData::parsePilotID($pilotid);
