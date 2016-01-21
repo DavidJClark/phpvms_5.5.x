@@ -299,7 +299,7 @@ class CentralData extends CodonData {
         }
         
         self::startBody('vanews');
-        self::addElement(null, 'total', count($all));
+        self::addElement(null, 'total', count($all_news));
         $news_parent = self::addElement('newsitems');
         foreach($all_news as $news) {
             $news_xml = self::addElement($news_parent, 'news', null, array(
