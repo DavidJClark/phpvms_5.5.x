@@ -25,7 +25,6 @@
 ?>
 <script type="text/javascript">
 var baseurl = "<?php echo SITE_URL;?>";
-var geourl = "<?php echo GEONAME_URL; ?>";
 </script>
 
 <link rel="stylesheet" media="all" type="text/css" href="<?php echo fileurl('lib/css/phpvms.css')?>" />

@@ -236,16 +236,9 @@ Config::Set('EMAIL_SEND_PIREP', true);
 # If blank, it'll default to the "from" email that's specified
 Config::Set('EMAIL_RETURN_PATH', '');
 
-/* Can be 'geonames' or 'phpvms'.
-	Geonames will use the geonames.org server to look up the airport info
-	phpvms will use the phpVMS API server
-*/
-
-Config::Set('AIRPORT_LOOKUP_SERVER', 'phpvms');
 Config::Set('PHPVMS_API_SERVER', 'http://api.vacentral.net');
 Config::Set('PHPVMS_NEWS_FEED', 'http://feeds.feedburner.com/phpvms');
 Config::Set('VACENTRAL_NEWS_FEED', 'http://feeds.feedburner.com/vacentral');
-Config::Set('GEONAME_API_SERVER', 'http://ws.geonames.org');
 
 /* Keys for recaptcha, you can change these if you want to your own but it's
 	a global key so it should just work */

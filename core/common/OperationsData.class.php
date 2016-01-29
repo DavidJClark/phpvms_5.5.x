@@ -682,12 +682,7 @@ class OperationsData extends CodonData {
     public static function RetrieveAirportInfo($icao) {
         $icao = strtoupper($icao);
 
-        if (Config::Get('AIRPORT_LOOKUP_SERVER') == 'geonames') {
-            $url = Config::Get('GEONAME_API_SERVER') .
-                '/searchJSON?maxRows=1&style=medium&featureCode=AIRP&type=json&q=' . $icao;
-        } elseif (Config::Get('AIRPORT_LOOKUP_SERVER') == 'phpvms') {
-            $url = Config::Get('PHPVMS_API_SERVER') . '/index.php/airport/get/' . $icao;
-        }
+        $url = Config::Get('PHPVMS_API_SERVER') . '/index.php/airport/get/' . $icao;
 
         # Updated to use CodonWebServer instead of simplexml_load_url() straight
         #	Could cause errors
@@ -698,9 +693,7 @@ class OperationsData extends CodonData {
         if ($reader->totalResultsCount == 0 || !$reader) {
             return false;
         } else {
-            if (isset($reader->geonames)) {
-                $apt = $reader->geonames[0];
-            } elseif (isset($reader->airports)) {
+            if (isset($reader->airports)) {
                 $apt = $reader->airports[0];
             }
 
