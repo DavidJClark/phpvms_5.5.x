@@ -267,6 +267,7 @@ function lookupICAO() {
 				$("#airportcountry").val(item.countryName);
 				$("#airportlat").val(item.lat);
 				$("#airportlong").val(item.lng);
+				$("#fuelprice").val(item.jeta);
 
 				$("#statusbox").html("");
 				$("#lookupicao").show();
