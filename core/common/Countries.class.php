@@ -34,7 +34,7 @@ class Countries extends CodonData {
 		'CK' => 'Cook Islands','CR' => 'Costa Rica','CI' => 'Cote D\'ivoire','HR' => 'Croatia','CU' => 'Cuba',
 		'CY' => 'Cyprus', 'CZ' => 'Czech Republic',	'DK' => 'Denmark','DJ' => 'Djibouti','DM' => 'Dominica',
 		'DO' => 'Dominican Republic','TP' => 'East Timor','EC' => 'Ecuador','EG' => 'Egypt','SV' => 'El Salvador',
-		'England'=>'England', 'EuropeanUnion' => 'European Union', 
+		'England'=>'England',
 		'GQ' => 'Equatorial Guinea','ER' => 'Eritrea','EE' => 'Estonia','ET' => 'Ethiopia',
 		'FK' => 'Falkland Islands (malvinas)','FO' => 'Faroe Islands','FJ' => 'Fiji','FI' => 'Finland',
 		'FR' => 'France','GF' => 'French Guiana','PF' => 'French Polynesia','TF' => 'French Southern Territories',
