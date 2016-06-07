@@ -63,7 +63,7 @@ if(isset($message))
 		
 		foreach($aircraft_list as $aircraft)
 		{
-			$sel = ($_POST['aircraft'] == $aircraft->name || $bid->registration == $aircraft->registration)?'selected':'';	
+			$sel = ($_POST['aircraft'] == $aircraft->id || $bid->registration == $aircraft->registration)?'selected':'';	
 			echo '<option value="'.$aircraft->id.'" '.$sel.'>'.$aircraft->name.' - '.$aircraft->registration.'</option>';
 		}
 		?>
