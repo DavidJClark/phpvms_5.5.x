@@ -83,7 +83,7 @@
 				
 				echo '</select>';
 			} elseif($field->type == 'textarea') {
-				echo '<textarea class="customfield_textarea"></textarea>';
+				echo '<textarea name="'.$field->fieldname.'" class="customfield_textarea">'.$field->value.'</textarea>';
 			} else {
 				echo '<input type="text" name="'.$field->fieldname.'" value="'.$field->value.'" />';
 			}
