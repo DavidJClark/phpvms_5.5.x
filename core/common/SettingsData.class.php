@@ -83,7 +83,8 @@ class SettingsData extends CodonData {
      * 'value'=>,
      * 'type'=>,
      * 'public'=>,
-     * 'showinregistration'=>);
+     * 'showinregistration'=>,
+	 * 'required'=>);
      */
     public static function addField($data) {
         $fieldname = str_replace(' ', '_', $data['title']);
@@ -95,12 +96,15 @@ class SettingsData extends CodonData {
 
         if ($data['showinregistration'] == true) $data['showinregistration'] = 1;
         else  $data['showinregistration'] = 0;
+		
+		if ($data['required'] == true) $data['required'] = 1;
+		else $data['required'] = 0;
 
         $data['type'] = strtolower($data['type']);
 
         $sql = "INSERT INTO " . TABLE_PREFIX .
-            "customfields (title, fieldname, value, type, public, showonregister)
-					VALUES ('{$data['title']}', '$fieldname', '{$data['value']}', '{$data['type']}', {$data['public']}, {$data['showinregistration']})";
+            "customfields (title, fieldname, value, type, public, showonregister, required)
+					VALUES ('{$data['title']}', '$fieldname', '{$data['value']}', '{$data['type']}', {$data['public']}, {$data['showinregistration']}, {$data['required']})";
 
         $res = DB::query($sql);
 
@@ -119,7 +123,8 @@ class SettingsData extends CodonData {
      * 'value'=>,
      * 'type'=>,
      * 'public'=>,
-     * 'showinregistration'=>);
+     * 'showinregistration'=>,
+	 * 'required'=>);
      */
     public static function editField($data) {
 
@@ -131,13 +136,16 @@ class SettingsData extends CodonData {
 
         if ($data['showinregistration'] == true) $data['showinregistration'] = 1;
         else  $data['showinregistration'] = 0;
+		
+		if ($data['required'] == true) $data['required'] = 1;
+		else $data['required'] = 0;
 
         $data['type'] = strtolower($data['type']);
 
         $sql = "UPDATE " . TABLE_PREFIX . "customfields
 				SET title='{$data['title']}', fieldname='{$fieldname}', value='{$data['value']}',
 					type='{$data['type']}', public={$data['public']}, 
-					showonregister={$data['showinregistration']}
+					showonregister={$data['showinregistration']}, required={$data['required']}
 				WHERE fieldid={$data['fieldid']}";
 
         $res = DB::query($sql);
