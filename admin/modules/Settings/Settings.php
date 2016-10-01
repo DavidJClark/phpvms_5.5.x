@@ -177,7 +177,8 @@ class Settings extends CodonModule {
 			'value'=>$this->post->value,
 			'type'=>$this->post->type,
 			'public'=>$this->post->public,
-			'showinregistration'=>$this->post->showinregistration
+			'showinregistration'=>$this->post->showinregistration,
+			'required'=>$this->post->required
 		);
 			
 		if($data['public'] == 'yes')
@@ -189,6 +190,11 @@ class Settings extends CodonModule {
 			$data['showinregistration'] = true;
 		else
 			$data['showinregistration'] = false;
+			
+		if($data['required'] == 'yes')
+			$data['required'] = true;
+		else
+			$data['required'] = false;
 			
 		$ret = SettingsData::AddField($data);
 		
@@ -216,7 +222,8 @@ class Settings extends CodonModule {
 			 'value'=>$this->post->value,
 			 'type'=>$this->post->type,
 			 'public'=>$this->post->public,
-			 'showinregistration'=>$this->post->showinregistration
+			 'showinregistration'=>$this->post->showinregistration,
+			 'required'=>$this->post->required
 		);
 		
 		if($data['public'] == 'yes')
@@ -228,6 +235,11 @@ class Settings extends CodonModule {
 			$data['showinregistration'] = true;
 		else
 			$data['showinregistration'] = false;
+			
+		if($data['required'] == 'yes') 
+			$data['required'] = true;
+		else
+			$data['required'] = false;
 		
 		$ret = SettingsData::EditField($data);
 		
