@@ -147,6 +147,7 @@ CREATE TABLE `phpvms_customfields` (
   `type` varchar(25) NOT NULL DEFAULT 'text',
   `public` smallint(6) NOT NULL DEFAULT '0',
   `showonregister` smallint(6) NOT NULL DEFAULT '0',
+  `required` smallint(6) NOT NULL DEFAULT '0',
   PRIMARY KEY (`fieldid`),
   UNIQUE KEY `fieldname` (`fieldname`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
