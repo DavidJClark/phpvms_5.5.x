@@ -37,6 +37,14 @@
 		</select>
 	</dd>
 	
+	<dt>Required</dt>
+	<dd>
+		<select name="required">
+		<option value="yes" <?php if($field->required == 1) echo 'selected'; ?>>Yes</option>
+		<option value="no" <?php if($field->required == 0) echo 'selected'; ?>>No</option>
+		</select>
+	</dd>
+	
 	<dt></dt>
 	<dd><input type="hidden" name="fieldid" value="<?php echo $field->fieldid ?>" />
 		<input type="hidden" name="action" value="<?php echo $action ?>" />
