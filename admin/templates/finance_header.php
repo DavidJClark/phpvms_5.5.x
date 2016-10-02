@@ -54,7 +54,7 @@ foreach($months as $monthname=>$timestamp)
 <form action="<?php echo adminurl('finance/viewreport'); ?>" method="get">
 	<strong>Filter Financials: </strong>
 	<input type="text" name="query" 
-		value="<?php if($_GET['query']) { echo $_GET['query'];} else { echo '(Use % for wildcard)';}?>" onClick="this.value='';" />
+		value="<?php if($_GET['query']) { echo $_GET['query'];} else { echo '(Use % for wildcard)';}?>" onClick="if(this.value=='(Use % for wildcard)') this.value='';" />
     <?php if($_GET['type']) $type = $_GET['type']; else $type = ''; ?>
 	<select name="type">
 		<option value="code" <?php if($type == 'code') {echo 'selected';} ?>>code</option>
