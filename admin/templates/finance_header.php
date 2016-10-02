@@ -51,16 +51,17 @@ foreach($months as $monthname=>$timestamp)
 </form>
 </td>
 <td align="right">
-<form action="<?php echo adminurl('finance/viewreport'.$_SERVER['QUERY_STRING']);?>" method="get">
+<form action="<?php echo adminurl('finance/viewreport'); ?>" method="get">
 	<strong>Filter Financials: </strong>
 	<input type="text" name="query" 
 		value="<?php if($_GET['query']) { echo $_GET['query'];} else { echo '(Use % for wildcard)';}?>" onClick="this.value='';" />
+    <?php if($_GET['type']) $type = $_GET['type']; else $type = ''; ?>
 	<select name="type">
-		<option value="code">code</option>
-		<option value="flightnum">flight number</option>
-		<option value="depapt">departure airport</option>
-		<option value="arrapt">arrival airport</option>
-		<option value="aircraft">aircraft type</option>
+		<option value="code" <?php if($type == 'code') {echo 'selected';} ?>>code</option>
+		<option value="flightnum" <?php if($type == 'flightnum') {echo 'selected';} ?>>flight number</option>
+		<option value="depapt" <?php if($type == 'depapt') {echo 'selected';} ?>>departure airport</option>
+		<option value="arrapt" <?php if($type == 'arrapt') {echo 'selected';} ?>>arrival airport</option>
+		<option value="aircraft" <?php if($type == 'aircraft') {echo 'selected';} ?>>aircraft type</option>
 	</select>
 	<input type="hidden" name="action" value="filter" />
 	<input type="submit" name="submit" value="filter" />
