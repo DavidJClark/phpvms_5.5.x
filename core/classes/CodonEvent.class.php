@@ -101,7 +101,7 @@ class CodonEvent
 		return true;
 	}
 	
-	public function hasStop($eventname)
+	public static function hasStop($eventname)
 	{
 		if(isset(self::$stopList[$eventname]) && self::$stopList[$eventname] == true)
 		{
