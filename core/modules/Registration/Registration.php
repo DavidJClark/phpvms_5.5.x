@@ -245,6 +245,22 @@ class Registration extends CodonModule
 		} else {
             $this->set('password_error', '');
 		}
+		
+		//Get customs fields
+		$fields = RegistrationData::getCustomFields();
+
+		if(count($fields) > 0) {
+		    foreach ($fields as $field) {
+			$value = Vars::POST($field->fieldname);
+			$value1 = DB::escape($value);
+			if ($field->required == 1 && $value1 == '') {
+				$error = true;
+				$this->set('custom_'.$field->fieldname.'_error', true);
+			} else {
+				$this->set('custom_'.$field->fieldname.'_error', '');
+			}
+		    }
+		}
 
 		if($error == true) {
 			return false;

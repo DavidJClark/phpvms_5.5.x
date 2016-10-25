@@ -13,6 +13,7 @@ if(!$allfields)
 	<tr>
 		<th>Field Name</th>
 		<th>Default Value</th>
+		<th>Required</th>
 		<th>Type</th>
 		<th>Options</th>
 	</tr>
@@ -25,6 +26,7 @@ foreach($allfields as $field)
 <tr id="row<?php echo $field->fieldid;?>">
 	<td align="center"><?php echo $field->title;?></td>
 	<td align="center"><?php echo $field->value;?></td>
+	<td align="center"><?php if($field->required == 1) {echo 'YES';} else {echo 'NO';} ?></td>
 	<td align="center"><?php echo $field->type;?></td>
 	<td align="center" nowrap width="1%">
 		<button id="dialog" class="jqModal button" 

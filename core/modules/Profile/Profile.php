@@ -28,7 +28,7 @@ class Profile extends CodonModule
 	{
 		if(!Auth::LoggedIn()) {
 			$this->set('message', 'You must be logged in to access this feature!');
-			$this->render('core_error.tpl');
+			$this->render('core_error.php');
 			return;
 		}
 
@@ -63,7 +63,7 @@ class Profile extends CodonModule
         $this->set('pilot', $pilot);
 		$this->set('pilot_hours', $totalhours);
 
-		$this->render('profile_main.tpl');
+		$this->render('profile_main.php');
 
 		CodonEvent::Dispatch('profile_viewed', 'Profile');
 	}
@@ -100,8 +100,8 @@ class Profile extends CodonModule
             $this->set('pilotcode', PilotData::getPilotCode($pilot->code, $pilot->pilotid));
             $this->set('allawards', AwardsData::getPilotAwards($pilot->pilotid));
 
-            $this->render('pilot_public_profile.tpl');
-            $this->render('pireps_viewall.tpl');
+            $this->render('pilot_public_profile.php');
+            $this->render('pireps_viewall.php');
 	}
 
 
@@ -114,12 +114,12 @@ class Profile extends CodonModule
 	{
 		if(!Auth::LoggedIn()) {
 			$this->set('message', 'You must be logged in to access this feature!');
-			$this->render('core_error.tpl');
+			$this->render('core_error.php');
 			return;
 		}
 
         $this->set('pilot', Auth::$pilot);
-		$this->render('profile_stats.tpl');
+		$this->render('profile_stats.php');
 	}
 
 	/**
@@ -131,7 +131,7 @@ class Profile extends CodonModule
 	{
 		$this->set('badge_url', fileurl(SIGNATURE_PATH.'/'.PilotData::GetPilotCode(Auth::$pilot->code, Auth::$pilot->pilotid).'.png'));
 		$this->set('pilotcode', PilotData::getPilotCode(Auth::$pilot->code, Auth::$pilot->pilotid));
-		$this->render('profile_badge.tpl');
+		$this->render('profile_badge.php');
 	}
 
 	/**
@@ -143,18 +143,18 @@ class Profile extends CodonModule
 	{
 		if(!Auth::LoggedIn()) {
 			$this->set('message', 'You must be logged in to access this feature!');
-			$this->render('core_error.tpl');
+			$this->render('core_error.php');
 			return;
 		}
 
 		$this->set('userinfo', Auth::$pilot);
-        $this->set('pilot', Auth::$pilot);
+        	$this->set('pilot', Auth::$pilot);
 		$this->set('customfields', PilotData::getFieldData(Auth::$pilotid, true));
 		$this->set('bgimages', PilotData::getBackgroundImages());
 		$this->set('countries', Countries::getAllCountries());
 		$this->set('pilotcode', PilotData::getPilotCode(Auth::$pilot->code, Auth::$pilot->pilotid));
 
-		$this->render('profile_edit.tpl');
+		$this->render('profile_edit.php');
 	}
 
 	/**
@@ -166,11 +166,11 @@ class Profile extends CodonModule
 	{
 		if(!Auth::LoggedIn()) {
 			$this->set('message', 'You must be logged in to access this feature!');
-			$this->render('core_error.tpl');
+			$this->render('core_error.php');
 			return;
 		}
 
-		$this->render('profile_changepassword.tpl');
+		$this->render('profile_changepassword.php');
 	}
 
 	/**
@@ -182,7 +182,7 @@ class Profile extends CodonModule
 	{
 		if(!Auth::LoggedIn()) {
 			$this->set('message', 'You must be logged in to access this feature!');
-			$this->render('core_error.tpl');
+			$this->render('core_error.php');
 			return;
 		}
 
@@ -190,7 +190,23 @@ class Profile extends CodonModule
 
 		//TODO: check email validity
 		if($this->post->email == '') {
+			$this->set('message', 'The email address cannot be blank.');
+			$this->render('core_error.php');
 			return;
+		}
+		
+		$fields = RegistrationData::getCustomFields();
+		
+		if(count($fields) > 0) {
+            		foreach ($fields as $field) {
+				$value = Vars::POST($field->fieldname);
+				$value1 = DB::escape($value);
+				if ($field->required == 1 && $value1 == '') {
+					$this->set('message', ''.$field->title.' cannot be blank!');
+					$this->render('core_error.php');
+					return;
+				} 
+			}
 		}
 
 		$params = array(
@@ -211,7 +227,7 @@ class Profile extends CodonModule
 		PilotData::SaveAvatar($pilot->code, $pilot->pilotid, $_FILES);
 
 		$this->set('message', 'Profile saved!');
-		$this->render('core_success.tpl');
+		$this->render('core_success.php');
 	}
 
 	/**
@@ -223,20 +239,20 @@ class Profile extends CodonModule
 	{
 		if(!Auth::LoggedIn()) {
 			$this->set('message', 'You must be logged in to access this feature!');
-			$this->render('core_error.tpl');
+			$this->render('core_error.php');
 			return;
 		}
 
 		// Verify
 		if($this->post->oldpassword == '') {
 			$this->set('message', 'You must enter your current password');
-			$this->render('core_error.tpl');
+			$this->render('core_error.php');
 			return;
 		}
 
 		if($this->post->password1 != $this->post->password2) {
 			$this->set('message', 'Your passwords do not match');
-			$this->render('core_error.tpl');
+			$this->render('core_error.php');
 			return;
 		}
 
@@ -250,6 +266,6 @@ class Profile extends CodonModule
 			$this->set('message', 'You entered an invalid password');
 		}
 
-		$this->render('core_success.tpl');
+		$this->render('core_success.php');
 	}
 }

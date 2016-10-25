@@ -43,7 +43,7 @@ if(Config::Get('PILOT_AUTO_RETIRE') == true) {
 	CronData::set_lastupdate('find_retired_pilots');
 }
 
-if(Config::Get('CLOSE_BIDS_AFTER_EXPIRE') === false) {
+if(Config::Get('CLOSE_BIDS_AFTER_EXPIRE') === true) {
 	SchedulesData::deleteExpiredBids();
 	CronData::set_lastupdate('check_expired_bids');
 }
