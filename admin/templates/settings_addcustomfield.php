@@ -9,9 +9,9 @@
 	<dt>Field Type</dt>
 	<dd>
 		<select name="type">
-		<option value="text">Text</option>
-		<option value="textarea">Textarea</option>
-		<option value="dropdown">Dropdown</option>
+		<option value="text" <?php if($field->type == "text") echo 'selected'; ?>>Text</option>
+		<option value="textarea" <?php if($field->type == "textarea") echo 'selected'; ?>>Textarea</option>
+		<option value="dropdown" <?php if($field->type == "dropdown") echo 'selected'; ?>>Dropdown</option>
 		</select>
 	</dd>
 	
