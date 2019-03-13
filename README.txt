@@ -1,3 +1,9 @@
+Updated version of phpVMS 5.5.x to comply with php 7.2 
+
+____________________________________
+****Original README.txt follows ****
+____________________________________
+
 Updated version of phpVMS maintained by David Clark/Simpilotgroup
 
 Current 5.5.2 release stable on php 5.5.12 environment.
@@ -21,3 +27,9 @@ INSTALLATION
 Upload to your site, create a database. Run the installer in install/install.php
 
 ---
+____________________________________
+****Original README.txt end ****
+____________________________________
+
+
+
