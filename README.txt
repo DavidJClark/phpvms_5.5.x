@@ -1,4 +1,6 @@
-Updated version of phpVMS 5.5.x to comply with php 7.2 
+Updated version of phpVMS 5.5.x to comply with php 7.2
+
+All previous copyrights and licenses apply
 
 ____________________________________
 ****Original README.txt follows ****
