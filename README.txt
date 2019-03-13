@@ -2,6 +2,7 @@ Updated version of phpVMS 5.5.x to comply with php 7.2
 
 All previous copyrights and licenses apply
 
+You may need to install locally using php 5.6x - then copy all files and import the local database to your server.
 ____________________________________
 ****Original README.txt follows ****
 ____________________________________
