@@ -91,10 +91,10 @@ if(DBASE_NAME != '' && DBASE_SERVER != '' && DBASE_NAME != 'DBASE_NAME') {
     
 	require CLASS_PATH.DS.'ezdb/ezdb.class.php';
 	
+	DB::init(DBASE_TYPE);
+	
 	DB::$show_errors = Config::Get('DEBUG_MODE');
 	DB::$throw_exceptions = false;
-	
-	DB::init(DBASE_TYPE);
 	
 	DB::set_log_errors(Config::Get('DEBUG_MODE'));
 	DB::set_error_handler(array('Debug', 'db_error'));
