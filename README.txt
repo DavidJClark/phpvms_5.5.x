@@ -1,3 +1,15 @@
+Updated version of phpVMS 5.5.2 for PHP 7.2 compatibility
+
+ATTENTION: WIP to rectify the following issues
+***** Use PHP 5.6 for installation and then change to PHP 7.2 after installation.
+***** Use MySQL 5.6 or prior as MySQL 5.7 will not process the database correctly on installation.
+
+Original copyrights and licenses remain in effect
+
+
+***** Start of original README *****
+________________________________________
+
 Updated version of phpVMS maintained by David Clark/Simpilotgroup
 
 Current 5.5.2 release stable on php 5.5.12 environment.
@@ -21,3 +33,5 @@ INSTALLATION
 Upload to your site, create a database. Run the installer in install/install.php
 
 ---
+________________________________________
+***** End of original README *****
