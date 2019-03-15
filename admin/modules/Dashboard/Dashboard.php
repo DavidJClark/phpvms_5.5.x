@@ -35,7 +35,8 @@ class Dashboard extends CodonModule {
         $this->CheckForUpdates();
         CentralData::send_vastats();
 
-        $this->set('unexported_count', count(PIREPData::getReportsByExportStatus(false)));
+        if (is_array(PIREPData::getReportsByExportStatus(false)) || PIREPData::getReportsByExportStatus(false) instanceof Countable)
+	$this->set('unexported_count', count(PIREPData::getReportsByExportStatus(false)));
         $this->render('dashboard.php');
     }
 
