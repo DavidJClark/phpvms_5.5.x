@@ -37,7 +37,7 @@ class TemplateDiffs extends CodonModule
 			
 			$filename = $file->getBaseName();
 			
-			$custom_path =  SKINS_PATH.DS.$filename;
+			$custom_path =  'SKINS_PATH.DS.$filename';
 			
 			if(file_exists($custom_path))
 			{
