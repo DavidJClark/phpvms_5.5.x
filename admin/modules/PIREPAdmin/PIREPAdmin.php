@@ -174,6 +174,7 @@ class PIREPAdmin extends CodonModule {
 
         $allreports = PIREPData::findPIREPS($params, $num_per_page, $this->get->start);
 
+        if (is_array($allreports) || ($allreports) instanceof Countable)
         if (count($allreports) >= $num_per_page) {
             $this->set('paginate', true);
             $this->set('admin', 'viewall');
