@@ -8,6 +8,7 @@
 if(PilotGroups::group_has_perm(Auth::$usergroups, MODERATE_PIREPS)) 
 {
 ?>
+if (is_array(PIREPData::GetAllReportsByAccept(PIREP_PENDING)) || (PIREPData::GetAllReportsByAccept(PIREP_PENDING)) instanceof Countable)
 <strong><a href="<?php echo SITE_URL?>/admin/index.php/pirepadmin/viewpending"><?php echo  count(PIREPData::GetAllReportsByAccept(PIREP_PENDING))?></strong> PIREPs pending</a><br />
 <?php 
 }
