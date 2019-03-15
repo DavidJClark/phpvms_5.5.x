@@ -105,7 +105,7 @@ class Config {
      *	so they're accessible from everywhere
      */
     public static function LoadSettings() {
-        while (list($key, $value) = each(self::$values)) {
+        foreach(self::$values as $key => $value) {
             if (!is_array($value)) {
                 if (!defined($key)) {
                     define($key, $value);
