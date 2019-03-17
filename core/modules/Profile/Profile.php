@@ -197,6 +197,7 @@ class Profile extends CodonModule
 		
 		$fields = RegistrationData::getCustomFields();
 		
+		if(is_array($fields) || $fields instanceof Countable)
 		if(count($fields) > 0) {
             		foreach ($fields as $field) {
 				$value = Vars::POST($field->fieldname);
