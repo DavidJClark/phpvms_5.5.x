@@ -20,7 +20,7 @@
 class RSSFeed {
     var $feed_contents;
 
-    public function RSSFeed($title = '', $url = '', $description = '') {
+    public function __construct($title = '', $url = '', $description = '') {
 
         $last_build_date = $this->LastBuildDate();
 
