@@ -479,7 +479,8 @@ class Import extends CodonModule {
 
         echo '</div>';
 
-        unlink($new_name);
+        fclose($fp);
+	unlink($new_name);
     }
 
     protected function get_airport_info($icao) {
