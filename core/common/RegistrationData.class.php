@@ -135,7 +135,8 @@ class RegistrationData extends CodonData {
         //Get customs fields
         $fields = self::getCustomFields();
         
-        if(count($fields) > 0) {
+        if(is_array($fields) || $fields instanceof Countable)
+	if(count($fields) > 0) {
             foreach ($fields as $field) {
                 $value = Vars::POST($field->fieldname);
                 $value = DB::escape($value);

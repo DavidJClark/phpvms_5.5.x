@@ -37,7 +37,7 @@ if (version_compare(PHP_VERSION, '5.1.2', '>=')) {
     } else {
         spl_autoload_register('PHPMailerAutoload');
     }
-# Deprecated __autoload() is deprecated, use spl_autoload_register() instead - no fallback
+# Deprecated: __autoload() is deprecated, use spl_autoload_register() instead - as above
 #} else {
     /**
      * Fall back to traditional autoload for old PHP versions
