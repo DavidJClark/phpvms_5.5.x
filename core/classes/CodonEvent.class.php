@@ -82,7 +82,7 @@ class CodonEvent
 		foreach(self::$listeners as $ModuleName => $Events)
 		{
 			$ModuleName = strtoupper($ModuleName);
-			global ${ModuleName};
+			global ${$ModuleName};
 			
 			# Run if no specific events specified, or if the eventname is there
 			if(!$Events || in_array($eventname, $Events))
