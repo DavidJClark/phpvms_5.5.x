@@ -183,7 +183,7 @@
  * @param string $dimensions
  */
 class googleChart {
-    var $url = 'http://chart.apis.google.com/chart?';
+    var $url = 'https://chart.apis.google.com/chart?';
     var $simple = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'; //simple data chart
     var $numericBase = 't'; //'t' = numeric 0-1000 url data, 's' = simple 0..61 data
     var $dimensions = '450x200';
@@ -204,7 +204,7 @@ class googleChart {
     var $negativeMode = false; //negative mode converts numbers to positive so google can display them
     var $barWidth = null; //sets the width of the bars for vert/horiz bar charts.
 
-    function googleChart($data = null, $type = null, $title = null, $dimensions = null) {
+    function __construct($data = null, $type = null, $title = null, $dimensions = null) {
         if ($data) $this->loadData($data);
         if ($type) $this->setType($type);
         if ($title) $this->title = $title;
