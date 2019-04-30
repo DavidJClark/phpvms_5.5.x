@@ -120,10 +120,10 @@ class MainController
 				if(class_exists($ModuleName))
 				{
 					$ModuleName = strtoupper($ModuleName);
-					global $$ModuleName;
+					global ${$ModuleName};
 				
-					$$ModuleName = new $ModuleName();
-					$$ModuleName->init($ModuleName); // Call the parent constructor
+					${$ModuleName} = new $ModuleName();
+					${$ModuleName}->init($ModuleName); // Call the parent constructor
 					
 					if(self::$activeModule == $ModuleName)
 					{
@@ -164,15 +164,15 @@ class MainController
 	public static function getInstance($module)
 	{
 		$ModuleName = strtoupper($module);
-		global $$ModuleName;
+		global ${$ModuleName};
 		
 		// Make sure this module is valid
-		if(!is_object($$ModuleName))
+		if(!is_object(${$ModuleName}))
 		{	
 			return false;
 		}
 		
-		return $$ModuleName;
+		return ${$ModuleName};
 	}
 	
 	/**
@@ -191,10 +191,10 @@ class MainController
 	{
 		//$call_function = 'Controller';
 		$ModuleName = strtoupper(self::$activeModule);
-		global $$ModuleName;
+		global ${$ModuleName};
 		
 		// Make sure this module is valid
-		if(!is_object($$ModuleName))
+		if(!is_object(${$ModuleName}))
 		{	
 			Debug::showCritical("The module \"{$ModuleName}\" doesn't exist!");
 			return;
@@ -215,11 +215,11 @@ class MainController
 			due to the fact that outside modules, etc will still use Run(), so it has
 			to stay the same */
 		
-		$ret = call_user_func_array(array($$ModuleName, $call_function), CodonRewrite::$params);
+		$ret = call_user_func_array(array(${$ModuleName}, $call_function), CodonRewrite::$params);
 			
 		/* Set the title, based on what the module has, if it's blank,
 			then just set it to the module name */
-		self::$page_title = $$ModuleName->title;
+		self::$page_title = ${$ModuleName}->title;
 		if(strlen(self::$page_title) === 0)
 		{
 			self::$page_title = ucwords(strtolower($ModuleName));
@@ -240,10 +240,10 @@ class MainController
 	public static function Run($ModuleName, $MethodName)
 	{
 		$ModuleName = strtoupper($ModuleName);
-		global $$ModuleName;
+		global ${$ModuleName};
 		
 		// have a reference to the self
-		if(!is_object($$ModuleName) || ! method_exists($$ModuleName, $MethodName))
+		if(!is_object(${$ModuleName}) || ! method_exists(${$ModuleName}, $MethodName))
 		{
 			return false;
 		}
@@ -260,12 +260,12 @@ class MainController
 				array_push($vals, $param);
 			}
 			
-			return call_user_func_array(array($$ModuleName, $MethodName), $vals);
+			return call_user_func_array(array(${$ModuleName}, $MethodName), $vals);
 		}
 		else
 		{
 			//no parameters, straight return
-			return $$ModuleName->$MethodName();
+			return ${$ModuleName}->$MethodName();
 		}
 	}
 	
