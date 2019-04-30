@@ -2,13 +2,13 @@
 
 class ofc_tags
 {
-	function ofc_tags()
+	public function __construct()
 	{
 		$this->type      = "tags";
 		$this->values	= array();
 	}
 	
-	function colour( $colour )
+	public function colour( $colour )
 	{
 		$this->colour = $colour;
 		return $this;
@@ -18,7 +18,7 @@ class ofc_tags
 	 *@param $font as string. e.g. "Verdana"
 	 *@param $size as integer. Size in px
 	 */
-	function font($font, $size)
+	public function font($font, $size)
 	{
 		$this->font = $font;
 		$this->{'font-size'} = $size;
@@ -29,50 +29,50 @@ class ofc_tags
 	 *@param $x as integer. Size of x padding in px
 	 *@param $y as integer. Size of y padding in px
 	 */
-	function padding($x, $y)
+	public function padding($x, $y)
 	{
 		$this->{"pad-x"} = $x;
 		$this->{"pad-y"} = $y;
 		return $this;
 	}
 	
-	function rotate($angle)
+	public function rotate($angle)
 	{
 		$this->rotate($angle);
 		return $this;
 	}
 	
-	function align_x_center()
+	public function align_x_center()
 	{
 		$this->{"align-x"} = "center";
 		return $this;
 	}
 	
-	function align_x_left()
+	public function align_x_left()
 	{
 		$this->{"align-x"} = "left";
 		return $this;
 	}
 	
-	function align_x_right()
+	public function align_x_right()
 	{
 		$this->{"align-x"} = "right";
 		return $this;
 	}
 	
-	function align_y_above()
+	public function align_y_above()
 	{
 		$this->{"align-y"} = "above";
 		return $this;
 	}
 	
-	function align_y_below()
+	public function align_y_below()
 	{
 		$this->{"align-y"} = "below";
 		return $this;
 	}
 	
-	function align_y_center()
+	public function align_y_center()
 	{
 		$this->{"align-y"} = "center";
 		return $this;
@@ -83,7 +83,7 @@ class ofc_tags
 	 *  - "More <a href="javascript:alert(12);">info</a>"
 	 *  - "<a href="http://teethgrinder.co.uk">ofc</a>"
 	 */
-	function text($text)
+	public function text($text)
 	{
 		$this->text = $text;
 		return $this;
@@ -93,7 +93,7 @@ class ofc_tags
 	 * This works, but to get the mouse pointer to change
 	 * to a little hand you need to use "<a href="">stuff</a>"-- see text()
 	 */
-	function on_click($on_click)
+	public function on_click($on_click)
 	{
 		$this->{'on-click'} = $on_click;
 		return $this;
@@ -105,7 +105,7 @@ class ofc_tags
 	 *@param $border boolean.
 	 *@prarm $alpha real (0 to 1.0)
 	 */
-	function style($bold, $underline, $border, $alpha )
+	public function style($bold, $underline, $border, $alpha )
 	{
 		$this->bold = $bold;
 		$this->border = $underline;
@@ -117,7 +117,7 @@ class ofc_tags
 	/**
 	 *@param $tag as ofc_tag
 	 */
-	function append_tag($tag)
+	public function append_tag($tag)
 	{
 		$this->values[] = $tag;
 	}
@@ -125,7 +125,7 @@ class ofc_tags
 
 class ofc_tag extends ofc_tags
 {
-	function ofc_tag($x, $y)
+	public function __construct($x, $y)
 	{
 		$this->x = $x;
 		$this->y = $y;
