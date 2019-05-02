@@ -11,6 +11,15 @@
  * settings to take effect
  *
  */
+
+/**
+ * MAKE ALL ADDITIONS AND CHANGES TO THIS FILE. Do NOT
+ * add or make changes to app.config.php
+ * Instead, (if necessary) copy the section in question from app.config.php 
+ * and paste into local.config.php - then make the changes here in the local.config.php file 
+ * Entries in local.config.php will take precedence over the same entry in app.config.php
+ */
+
 Config::Set('DEBUG_MODE', false);
 Config::Set('DEBUG_LEVEL', 1); // 1 logs query errors, 2 logs all queries
 Config::Set('ERROR_LEVEL', E_ALL ^ E_NOTICE);
@@ -77,6 +86,10 @@ Config::Set('TRANSFER_HOURS_IN_RANKS', false);
 Config::Set('USERS_ONLINE_TIME', 20);
 
 # Google Map Options
+# You will need to add your own Google Maps API Key. Look in 
+# core/templates/core_htmlhead.php (might want to move this to
+# lib/skins/YOURSKINNAME folder instead). Around line 37 of core_htmlhead.php
+# replace YOUR_API_KEY_HERE with your personal Google Maps API key
 Config::Set('MAP_WIDTH', '800px');
 Config::Set('MAP_HEIGHT', '600px');
 # Valid types are G_NORMAL_MAP, G_SATELLITE_MAP, G_HYBRID_MAP, G_PHYSICAL_MAP
@@ -160,4 +173,11 @@ Config::Set('EMAIL_SMTP_USE_AUTH', false);
 Config::Set('EMAIL_SMTP_SECURE', 'ssl'); # must be "ssl" for Google Apps
 Config::Set('EMAIL_SMTP_USER', '');
 Config::Set('EMAIL_SMTP_PASS', '');
+
+/* 	Keys for recaptcha - This version is ReCaptcha v2 compliant. You will need to 
+	acquire your own keys for ReCaptcha to work. Keys are site specific. 
+	Get your keys here: https://developers.google.com/recaptcha/docs/display
+	Add each key in the designated section */
+Config::Set('RECAPTCHA_PUBLIC_KEY', '<Place_Google_ReCaptcha_Site_Key_Here>');
+Config::Set('RECAPTCHA_PRIVATE_KEY', '<Place_Google_ReCaptcha_Secret_Key_Here>');
 
