@@ -103,9 +103,9 @@ Config::Set('TWITTER_OAUTH_SECRET', '');
 /*
   This is the unit of money. For non-dollars, use :
 	Dollars ($), enter "$"
-	Euro (€), enter "&#8364;"
-	Yen (¥), enter "&yen;"
-	Pounds (£), enter "&pound;"
+	Euro (â‚¬), enter "&#8364;"
+	Yen (Â¥), enter "&yen;"
+	Pounds (Â£), enter "&pound;"
 	
   For example, to set EUROS:
 	Config::Set('MONEY_UNIT', '&#8364;');
@@ -119,7 +119,7 @@ Config::Set('WeightUnit', '1');   # 0=Kg 1=lbs
 Config::Set('DistanceUnit', '2');   # 0=KM 1= Miles 2=NMiles
 Config::Set('SpeedUnit', '1');   # 0=Km/H 1=Kts
 Config::Set('AltUnit', '1');   # 0=Meter 1=Feet 
-Config::Set('LiquidUnit', '2');   # 0=liter 1=gal 2=kg 3=lbs
+Config::Set('LiquidUnit', '3');   # 0=liter 1=gal 2=kg 3=lbs
 Config::Set('WelcomeMessage', 'phpVMS/FSPAX ACARS'); # Welcome Message
 
 /* FSFK Settings
