@@ -27,6 +27,13 @@
  * View the docs for details about these settings
  */
 
+/**
+ * DO NOT ADD OR MAKE CHANGES TO THIS CONTENTS OF THIS FILE!!
+ * Instead, (if necessary) copy the section in question and paste into 
+ * local.config.php - then make the changes there in the local.config.php file 
+ * Entries in local.config.php will take precedence over the same entry in app.config.php
+ */
+
 define('IN_PHPVMS', true);
 
 # Debug mode is off by default
@@ -117,6 +124,10 @@ Config::Set('RESTRICT_AIRCRAFT_RANKS', true);
 Config::Set('USERS_ONLINE_TIME', 20);
 
 # Google Map Options
+# You will need to add your own Google Maps API Key. Look in 
+# core/templates/core_htmlhead.php (might want to move this to
+# lib/skins/YOURSKINNAME folder instead). Around line 37 of core_htmlhead.php
+# replace YOUR_API_KEY_HERE with your personal Google Maps API key
 Config::Set('MAP_WIDTH', '800px');
 Config::Set('MAP_HEIGHT', '600px');
 Config::Set('MAP_TYPE', 'G_PHYSICAL_MAP');
@@ -158,8 +169,9 @@ Config::Set('MONEY_FORMAT', '%(#10n');
 /* Default fuel price, for airports that don't have
 	And the surcharge percentage. View the docs
 	for more details about these
+	FUEL_DEFAULT_PRICE is set here for price per pound
 */
-Config::Set('FUEL_DEFAULT_PRICE', '5.10');
+Config::Set('FUEL_DEFAULT_PRICE', '0.78'); 
 Config::Set('FUEL_SURCHARGE', '5');
 
 # Units settings
@@ -235,19 +247,29 @@ Config::Set('EMAIL_SEND_PIREP', true);
 # If blank, it'll default to the "from" email that's specified
 Config::Set('EMAIL_RETURN_PATH', '');
 
+/*	Check the phpVMS forums for status of phpVMS API server and VACentral.
+	As of this release, both are down. Check the forums for additional info */
 Config::Set('PHPVMS_API_SERVER', 'http://api.vacentral.net');
 Config::Set('PHPVMS_NEWS_FEED', 'http://feeds.feedburner.com/phpvms');
 Config::Set('VACENTRAL_NEWS_FEED', 'http://feeds.feedburner.com/vacentral');
 
-/* Keys for recaptcha, you can change these if you want to your own but it's
-	a global key so it should just work */
-Config::Set('RECAPTCHA_PUBLIC_KEY', '6LcklAsAAAAAAJqmghmMPOACeJrAxW3sJulSboxx');
-Config::Set('RECAPTCHA_PRIVATE_KEY', '6LcklAsAAAAAAMeQy5ZBoDu8JOMTP-UL7ek1GedO');
+/* 	Keys for recaptcha - This version is ReCaptcha v2 compliant. You will need to 
+	acquire your own keys for ReCaptcha to work. Keys are site specific. 
+	Get your keys here: https://developers.google.com/recaptcha/docs/display
+	Add both keys in the provided section of local.config.php */
+Config::Set('RECAPTCHA_PUBLIC_KEY', '<Place_Google_ReCaptcha_Site_Key_Here>');
+Config::Set('RECAPTCHA_PRIVATE_KEY', '<Place_Google_ReCaptcha_Secret_Key_Here>');
+
+/**
+ * DO NOT ADD OR MAKE CHANGES TO THIS CONTENTS OF THIS FILE!!
+ * Instead, (if necessary) copy the section in question and paste into 
+ * local.config.php - then make the changes there in the local.config.php file 
+ * Entries in local.config.php will take precedence over the same entry in app.config.php
+ */
 
 /*	Whether you have the /admin/maintenance.php script added into cron.
 	If you do, set this to true. This saves many DB calls since phpVMS will
-	have to 'fake' a cron-job
-	*/
+	have to 'fake' a cron-job */
 Config::Set('USE_CRON', false);
 
 Config::Set('CHECK_RELEASE_VERSION', true);
