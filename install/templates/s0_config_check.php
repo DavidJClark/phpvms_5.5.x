@@ -1,7 +1,7 @@
 <table width="550px" align="center">
 <tr>
 <td colspan="2">
-	<p>Welcome to the phpVMS installer! In order for phpVMS to work properly, you need to have a few prerequisites. Mainly, you must be running PHP 5. The installer has found a few problems with your install, which are highlighted below.
+	<p>Welcome to the phpVMS installer! In order for phpVMS to work properly, you need to have a few prerequisites. Mainly, you must be running PHP 7.2. The installer has found a few problems with your install, which are highlighted below.
 </td>
 </tr>
 <tr>
