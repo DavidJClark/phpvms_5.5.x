@@ -87,7 +87,7 @@ if(Debug::$debug_enabled == true) {
 /* Init caching engine */
 CodonCache::init($cache_settings);
 
-if(DBASE_NAME != '' && DBASE_SERVER != '' && DBASE_NAME != 'DBASE_NAME') {
+if('DBASE_NAME' != '' && 'DBASE_SERVER' != '' && 'DBASE_NAME' != 'DBASE_NAME') {
     
 	require CLASS_PATH.DS.'ezdb/ezdb.class.php';
 	
