@@ -41,10 +41,10 @@ class Installer
 		$wf[] = 'lib/signatures';
 		
 		// Check the PHP version
-		if($version[0] != '5') {
+		if($version[0] != '7') {
 			$noerror = false;
 			$type = 'error';
-			$message = 'You need PHP 5 (your version: '.$version.')';
+			$message = 'You need PHP 7.2 (your version: '.$version.')';
 		} else {
 			$type = 'success';
 			$message = 'OK! (your version:'.$version.')';
@@ -266,7 +266,7 @@ class Installer
 		$data = array(
 			'firstname' => $_POST['firstname'],
 			'lastname' => $_POST['lastname'],
-			'email' => $_POST['email'],l,
+			'email' => $_POST['email'],'l',
 			'password' => $_POST['password'],
 			'code' => $_POST['vacode'],
 			'location' => 'US',
@@ -390,7 +390,7 @@ class Installer
 		$params->addChild('url', SITE_URL);
 		$params->addChild('version', $version);
 		$params->addChild('php', phpversion());
-		$params->addChild('mysql', @mysql_get_server_info());
+		$params->addChild('mysqli', @mysql_get_server_info());
 		$params->addChild('ext', $ext);
 							  
 		$url = 'http://api.phpvms.net/register';
