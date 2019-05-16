@@ -5,7 +5,7 @@
 </td>
 </tr>
 <tr>
-	<td><strong>PHP Version (5 required) </strong></td>
+	<td><strong>PHP Version (7.2 required) </strong></td>
 	<td><?php echo $phpversion;?></td>
 </tr>
 
