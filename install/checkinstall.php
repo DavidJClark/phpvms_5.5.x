@@ -54,8 +54,9 @@ echo '<strong>Checking PHP version</strong><br />';
 $version = phpversion();
 $version = substr($version, 0, 3);
 
-if ($version[0] == '4' || $version == '5.0' || $version == '5.1') {
-    error('Error!', 'Must be running at least PHP 5.2');
+if ($version[0] == '4' || $version == '5.0' || $version == '5.1' || $version == '5.2' || $version == '5.3' || 
+    $version == '5.4' || $version == '5.5' || $version == '5.6' || $version == '7.0' || $version == '7.1') {
+    error('Error!', 'Must be running at least PHP 7.2');
 } else {
     $version = phpversion();
     success('OK', "PHP version is {$version}.x");
