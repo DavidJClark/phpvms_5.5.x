@@ -132,7 +132,7 @@ class Debug
 	public static function showCritical($message, $title='') {
 		if($title == '')
 			$title = 'An Error Was Encountered';
-			$site = SITE_URL;
+			$site = 'SITE_URL';
 		echo <<<MESSAGE
 		<div id="codon_crit_error" 
 			style="font-family: 'Lucida Sans',Verdana;border:#999 1px solid;background-color:#fff;padding:20px 20px 12px 20px;">
