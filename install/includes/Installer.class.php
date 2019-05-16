@@ -390,7 +390,7 @@ class Installer
 		$params->addChild('url', SITE_URL);
 		$params->addChild('version', $version);
 		$params->addChild('php', phpversion());
-		$params->addChild('mysqli', @mysql_get_server_info());
+		$params->addChild('mysqli', @mysqli_get_server_info());
 		$params->addChild('ext', $ext);
 							  
 		$url = 'http://api.phpvms.net/register';
