@@ -178,6 +178,6 @@ Config::Set('EMAIL_SMTP_PASS', '');
 	acquire your own keys for ReCaptcha to work. Keys are site specific. 
 	Get your keys here: https://developers.google.com/recaptcha/docs/display
 	Add each key in the designated section */
-Config::Set('RECAPTCHA_PUBLIC_KEY', '<Place_Google_ReCaptcha_Site_Key_Here>');
-Config::Set('RECAPTCHA_PRIVATE_KEY', '<Place_Google_ReCaptcha_Secret_Key_Here>');
+Config::Set('RECAPTCHA_PUBLIC_KEY', 'PLACE_GOOGLE_RECAPTCHA_SITE_KEY_HERE');
+Config::Set('RECAPTCHA_PRIVATE_KEY', 'PLACE_GOOGLE_RECAPTCHA_SECRET_KEY_HERE');
 
