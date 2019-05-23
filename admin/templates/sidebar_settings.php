@@ -15,16 +15,8 @@ and where email's sent to Pilots will appear to be from.</p>
 You can format the date/time to show however you want. The format
 is in the <a href="http://us2.php.net/date" target="_new">PHP Date Format</a>.</p>
 
-<p><strong>Notify for Updates</strong> - 
-This will reach out to phpvms.net and check to see if there
-is a newer version available.</p>
-
 <p><strong>Current Skin</strong> - 
 Choose the skin to use on the front-end of your website</p>
-
-<p><strong>Google API Key</strong> - 
-In order for Google Maps to work, you need a 
-<a href="http://code.google.com/apis/maps/signup.html" target="_new">Google API Key</a>.</p>
 
 <p><strong>Default User Group</strong> - 
 This is the default group newly registered pilots will be placed in.</p>
