@@ -57,8 +57,8 @@ define('LIB_PATH', SITE_ROOT.DS.'lib');
 define('VENDORS_PATH', CORE_PATH.DS.'vendors');
 
 $version = phpversion();
-if(intval($version[0]) < 5) {
-	die('You are not running PHP 5+');
+if(intval($version[0]) < 7) {
+	die('You are not running PHP 7+');
 }
 
 require CLASS_PATH.DS.'autoload.php';
