@@ -90,7 +90,7 @@ echo $page_htmlreq;
 			/*	You can modify this template into a table or something, by default
 				it's list elements inside of a UL. Here's a link with some info:
 				
-				https://articles.sitepoint.com/article/css-anthology-tips-tricks-4/2
+				https://www.sitepoint.com/css-anthology-tips-tricks-4/2/
 			 */
 			Template::Show('core_navigation.php');
 			?>
