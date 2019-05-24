@@ -143,11 +143,11 @@ class RegistrationData extends CodonData {
     
                     if ($value != '') {
                         $sql = "INSERT INTO `".TABLE_PREFIX."fieldvalues` (fieldid, pilotid, value)
-    							VALUES ($field->fieldid, $pilotid, '$value')";
+			    VALUES ($field->fieldid, $pilotid, '$value')";
     
                         DB::query($sql);
                     }
-		}
+                }
             }
         }
 
