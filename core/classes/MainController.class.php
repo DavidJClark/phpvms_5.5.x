@@ -110,7 +110,7 @@ class MainController
 		
 		ksort(self::$ModuleList);
 
-                foreach (self::$ModuleList as $module_name => $module_controller) {
+                foreach (self::$ModuleList as $module_name => $module_controller)
                 {
 			$ModuleName = self::$keys[$i];
 			$ModuleController = self::$ModuleList[$ModuleName];
