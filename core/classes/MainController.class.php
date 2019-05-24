@@ -108,9 +108,7 @@ class MainController
 		self::$listSize = sizeof(self::$ModuleList);
 		self::$keys = array_keys(self::$ModuleList);
 		
-		ksort(self::$ModuleList);
-
-                foreach (self::$ModuleList as $module_name => $module_controller)
+		for ($i=0; $i<self::$listSize; $i++)
                 {
 			$ModuleName = self::$keys[$i];
 			$ModuleController = self::$ModuleList[$ModuleName];
