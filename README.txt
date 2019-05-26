@@ -1,7 +1,9 @@
 Updated version of phpVMS 5.5.2 for PHP 7.2 compatibility
 
-ATTENTION: WIP to rectify the following issues
-***** Use PHP 5.6 for installation and then change to PHP 7.2 after installation.
+ATTENTION: WIP - use at your own risk
+***** Will install under PHP 7.2 as of 05/23/2019. But a few Warning messages show while installing. Install completes successfully.
+***** After installation, this version is stable on PHP 7.2.7 environment.
+***** Working on a few other minor issues - check the 'Issues' tab for additional info.
 ***** Use MySQL 5.6 or prior as MySQL 5.7 will not process the database correctly on installation.
 
 Original copyrights and licenses remain in effect
