@@ -28,7 +28,7 @@
  */
 
 /**
- * DO NOT ADD OR MAKE CHANGES TO THIS CONTENTS OF THIS FILE!!
+ * DO NOT ADD OR MAKE CHANGES TO THE CONTENTS OF THIS FILE!!
  * Instead, (if necessary) copy the section in question and paste into 
  * local.config.php - then make the changes there in the local.config.php file 
  * Entries in local.config.php will take precedence over the same entry in app.config.php
@@ -123,11 +123,13 @@ Config::Set('RESTRICT_AIRCRAFT_RANKS', true);
 # The StatsData::UserOnline() function - how many minutes to check
 Config::Set('USERS_ONLINE_TIME', 20);
 
-# Google Map Options
-# You will need to add your own Google Maps API Key. Look in 
-# core/templates/core_htmlhead.php (might want to move this to
-# lib/skins/YOURSKINNAME folder instead). Around line 37 of core_htmlhead.php
-# replace YOUR_API_KEY_HERE with your personal Google Maps API key
+/* Google Map Options -
+	You will need to add your own Google Maps API Key in two different locations. 
+	Look in core/templates/core_htmlhead.php (might want to move this to
+		lib/skins/YOURSKINNAME folder instead) around line 37. Replace
+		YOUR_API_KEY_HERE with your personal Google Maps API key
+	Look in admin/templates/core_htmlhead.php around line 16. Replace 
+		YOUR_API_KEY_HERE with your personal Google Maps API key. */
 Config::Set('MAP_WIDTH', '800px');
 Config::Set('MAP_HEIGHT', '600px');
 Config::Set('MAP_TYPE', 'G_PHYSICAL_MAP');
@@ -135,6 +137,21 @@ Config::Set('MAP_LINE_COLOR', '#ff0000');
 Config::Set('MAP_CENTER_LAT', '45.484400');
 Config::Set('MAP_CENTER_LNG', '-62.334821');
 Config::Set('MAP_ZOOM_LEVEL', 12);
+
+/* Recaptcha - DO NOT ADD OR MAKE CHANGES TO THE CONTENTS OF THIS FILE!!
+	This version is ReCaptcha v2 compliant. You will need to 
+	acquire your own keys for ReCaptcha to work. Keys are site specific. 
+	Get your keys here: https://developers.google.com/recaptcha/docs/display
+	Add both keys in the provided section of local.config.php */
+Config::Set('RECAPTCHA_PUBLIC_KEY', '<Place_Google_ReCaptcha_Site_Key_Here>');
+Config::Set('RECAPTCHA_PRIVATE_KEY', '<Place_Google_ReCaptcha_Secret_Key_Here>');
+
+/**
+ * DO NOT ADD OR MAKE CHANGES TO THIS CONTENTS OF THIS FILE!!
+ * Instead, (if necessary) copy the section in question and paste into 
+ * local.config.php - then make the changes there in the local.config.php file 
+ * Entries in local.config.php will take precedence over the same entry in app.config.php
+ */
 
 # ACARS options
 #  Minutes, flights to show on the ACARS
@@ -252,20 +269,6 @@ Config::Set('EMAIL_RETURN_PATH', '');
 Config::Set('PHPVMS_API_SERVER', 'http://api.vacentral.net');
 Config::Set('PHPVMS_NEWS_FEED', 'http://feeds.feedburner.com/phpvms');
 Config::Set('VACENTRAL_NEWS_FEED', 'http://feeds.feedburner.com/vacentral');
-
-/* 	Keys for recaptcha - This version is ReCaptcha v2 compliant. You will need to 
-	acquire your own keys for ReCaptcha to work. Keys are site specific. 
-	Get your keys here: https://developers.google.com/recaptcha/docs/display
-	Add both keys in the provided section of local.config.php */
-Config::Set('RECAPTCHA_PUBLIC_KEY', '<Place_Google_ReCaptcha_Site_Key_Here>');
-Config::Set('RECAPTCHA_PRIVATE_KEY', '<Place_Google_ReCaptcha_Secret_Key_Here>');
-
-/**
- * DO NOT ADD OR MAKE CHANGES TO THIS CONTENTS OF THIS FILE!!
- * Instead, (if necessary) copy the section in question and paste into 
- * local.config.php - then make the changes there in the local.config.php file 
- * Entries in local.config.php will take precedence over the same entry in app.config.php
- */
 
 /*	Whether you have the /admin/maintenance.php script added into cron.
 	If you do, set this to true. This saves many DB calls since phpVMS will
