@@ -85,11 +85,13 @@ Config::Set('TRANSFER_HOURS_IN_RANKS', false);
 # The StatsData::UserOnline() function - how many minutes to check
 Config::Set('USERS_ONLINE_TIME', 20);
 
-# Google Map Options
-# You will need to add your own Google Maps API Key. Look in 
-# core/templates/core_htmlhead.php (might want to move this to
-# lib/skins/YOURSKINNAME folder instead). Around line 37 of core_htmlhead.php
-# replace YOUR_API_KEY_HERE with your personal Google Maps API key
+/* Google Map Options
+	You will need to add your own Google Maps API Key in two different locations. 
+	Look in core/templates/core_htmlhead.php (might want to move this to
+		lib/skins/YOURSKINNAME folder instead) around line 37. Replace
+		YOUR_API_KEY_HERE with your personal Google Maps API key
+	Look in admin/templates/core_htmlhead.php around line 16. Replace 
+		YOUR_API_KEY_HERE with your personal Google Maps API key. */
 Config::Set('MAP_WIDTH', '800px');
 Config::Set('MAP_HEIGHT', '600px');
 # Valid types are G_NORMAL_MAP, G_SATELLITE_MAP, G_HYBRID_MAP, G_PHYSICAL_MAP
@@ -98,6 +100,13 @@ Config::Set('MAP_LINE_COLOR', '#ff0000');
 Config::Set('MAP_CENTER_LAT', '45.484400');
 Config::Set('MAP_CENTER_LNG', '-62.334821');
 Config::Set('MAP_ZOOM_LEVEL', 12);
+
+/* Recaptcha - This version is ReCaptcha v2 compliant. You will need to 
+	acquire your own keys for ReCaptcha to work. Keys are site specific. 
+	Get your keys here: https://developers.google.com/recaptcha/docs/display
+	Add each key in the designated section */
+Config::Set('RECAPTCHA_PUBLIC_KEY', 'PLACE_GOOGLE_RECAPTCHA_SITE_KEY_HERE');
+Config::Set('RECAPTCHA_PRIVATE_KEY', 'PLACE_GOOGLE_RECAPTCHA_SECRET_KEY_HERE');
 
 # ACARS options
 #  Minutes, flights to show on the ACARS
@@ -173,11 +182,3 @@ Config::Set('EMAIL_SMTP_USE_AUTH', false);
 Config::Set('EMAIL_SMTP_SECURE', 'ssl'); # must be "ssl" for Google Apps
 Config::Set('EMAIL_SMTP_USER', '');
 Config::Set('EMAIL_SMTP_PASS', '');
-
-/* 	Keys for recaptcha - This version is ReCaptcha v2 compliant. You will need to 
-	acquire your own keys for ReCaptcha to work. Keys are site specific. 
-	Get your keys here: https://developers.google.com/recaptcha/docs/display
-	Add each key in the designated section */
-Config::Set('RECAPTCHA_PUBLIC_KEY', 'PLACE_GOOGLE_RECAPTCHA_SITE_KEY_HERE');
-Config::Set('RECAPTCHA_PRIVATE_KEY', 'PLACE_GOOGLE_RECAPTCHA_SECRET_KEY_HERE');
-
