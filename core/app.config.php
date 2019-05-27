@@ -147,7 +147,7 @@ Config::Set('RECAPTCHA_PUBLIC_KEY', '<Place_Google_ReCaptcha_Site_Key_Here>');
 Config::Set('RECAPTCHA_PRIVATE_KEY', '<Place_Google_ReCaptcha_Secret_Key_Here>');
 
 /**
- * DO NOT ADD OR MAKE CHANGES TO THIS CONTENTS OF THIS FILE!!
+ * DO NOT ADD OR MAKE CHANGES TO THE CONTENTS OF THIS FILE!!
  * Instead, (if necessary) copy the section in question and paste into 
  * local.config.php - then make the changes there in the local.config.php file 
  * Entries in local.config.php will take precedence over the same entry in app.config.php
