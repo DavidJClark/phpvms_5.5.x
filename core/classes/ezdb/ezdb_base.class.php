@@ -668,9 +668,11 @@ class ezDB_Base
 	public function build_where($fields)
 	{
 		if(is_array ($fields) || $fields instanceof Countable);
-		if(count($fields) === 0 || empty($fields) === true)
 		{
-			return '';
+			if(count($fields) === 0 || empty($fields) === true)
+			{
+				return '';
+			}
 		}
 
 		// It's a string
