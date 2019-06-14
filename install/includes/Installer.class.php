@@ -289,9 +289,9 @@ class Installer
 		}
 		
 		# Add the final settings in
-		SettingsData::SaveSetting('SITE_NAME', $_POST['SITE_NAME']);
-		SettingsData::SaveSetting('ADMIN_EMAIL', $_POST['email']);
-		SettingsData::SaveSetting('GOOGLE_KEY', $_POST['googlekey']);
+		SettingsData::saveSetting('SITE_NAME', $_POST['SITE_NAME']);
+		SettingsData::saveSetting('ADMIN_EMAIL', $_POST['email']);
+		//SettingsData::saveSetting('GOOGLE_KEY', $_POST['googlekey']); //deprecated in version 5.5.2
 		
 		return true;
 		
