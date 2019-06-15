@@ -1,22 +1,48 @@
-Updated version of phpVMS 5.5.2 for PHP 7.2 compatibility
+Updated version of phpVMS 5.5.2 with PHP 7.2 compatibility
 
-ATTENTION: WIP - use at your own risk
-***** Will install under PHP 7.2 as of 05/23/2019. But a few Warning messages show while installing. Install completes successfully.
-***** After installation, this version is stable on PHP 7.2.7 environment.
-***** Working on a few other minor issues - check the 'Issues' tab for additional info.
-***** Use MySQL 5.6 or prior as MySQL 5.7 will not process the database correctly on installation.
+Current release stable on php 7.2.19 environment.
 
-Original copyrights and licenses remain in effect
+***** ATTENTION: WIP - use at your own risk *****
 
+--- Will install under PHP 7.2 as of 05/23/2019. But a few Warning messages show while installing. Install completes successfully.
+--- Full install required. Update install is not working correctly.
+--- Working on a few other minor issues - check the 'Issues' tab for additional info. Report any additional issues there.
+--- Use MySQL 5.6 or prior as MySQL 5.7 will not process the database correctly on installation.
+
+--------------------------------CAUTION------------------------------------------
+
+If you have modules and other addons that worked in version 5.5.2 or older releases of phpVMS they will most likely break in this
+version. There are numerous changes to make this version php 7.2 compatible. It is suggested you look through the commits of this
+version and that of your currently installed phpVMS version prior to installing. It is also suggested that you NOT install to your 
+live website environment until you complete any module and addon updates in a development environment. Additionally, do NOT tie this
+installation directly to your present database - create a new database for this install (you can transfer data over AFTER all your
+modules and addons are working correctly.
+
+---------------------------------------------------------------------------------
+
+INSTALLATION
+
+Upload to your development environment, create a database. Run the installer in .../install/install.php
+
+***** Original copyrights and licenses remain in effect *****
+
+phpVMS - Virtual Airline Administration Software
+ Copyright (c) 2008 Nabeel Shahzad (https://github.com/nshahzad/phpVMS)
+
+ phpVMS is licenced under the following license:
+   BSD 3-clause (per https://github.com/nshahzad/phpVMS/commit/e031365125668f6f7d9c92e8c284b2be14b61b2b)
+
+________________________________________________________________________________
 
 ***** Start of original README *****
-________________________________________
+________________________________________________________________________________
 
 Updated version of phpVMS maintained by David Clark/Simpilotgroup
+https://github.com/DavidJClark/phpvms_5.5.x
 
 Current 5.5.2 release stable on php 5.5.12 environment.
 
---------------------------------CAUTION-------------------------------------------
+--------------------------------CAUTION------------------------------------------
 
 This version is not for the faint of heart. If you have modules and other addons that worked on older releases of phpVMS they will most likely break in this version. There are numerous changes. I HIGHLY suggest you look through the commits on both the original phpVMS github repository as well as this one prior to updating. The phpVMS forum also holds a lot of information about using phpVMS and modules in php versions past 5.3.
 
@@ -35,5 +61,5 @@ INSTALLATION
 Upload to your site, create a database. Run the installer in install/install.php
 
 ---
-________________________________________
+________________________________________________________________________________
 ***** End of original README *****
