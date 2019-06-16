@@ -37,8 +37,8 @@ class Dashboard extends CodonModule {
 
         if (is_array(PIREPData::getReportsByExportStatus(false)) || PIREPData::getReportsByExportStatus(false) instanceof Countable) {
 		$this->set('unexported_count', count(PIREPData::getReportsByExportStatus(false)));
-        	$this->render('dashboard.php');
 	}
+        	$this->render('dashboard.php');
     }
 
     public function pirepcounts() {
