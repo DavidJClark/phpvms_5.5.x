@@ -1,4 +1,4 @@
-#**_phpVMS 5.5.2.72_**#
+#phpVMS 5.5.2.72#
 
 **_Updated version of phpVMS 5.5.2 (simpilot) with PHP 7.2 compatibility_**
 
