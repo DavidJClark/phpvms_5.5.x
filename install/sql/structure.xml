@@ -25,7 +25,7 @@
 		<field Field="phasedetail" Type="varchar(255)" Null="NO" Key="" Default="" Extra="" Comment="" />
 		<field Field="online" Type="varchar(10)" Null="NO" Key="" Default="" Extra="" Comment="" />
 		<field Field="messagelog" Type="text" Null="NO" Key="" Extra="" Comment="" />
-		<field Field="lastupdate" Type="datetime" Null="NO" Key="" Default="0000-00-00 00:00:00" Extra="" Comment="" />
+		<field Field="lastupdate" Type="datetime" Null="NO" Key="" Default="1970-01-01 01:01:01" Extra="" Comment="" />
 		<field Field="client" Type="varchar(20)" Null="NO" Key="" Default="" Extra="" Comment="" />
 		<key Table="phpvms_acarsdata" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" />
 		<key Table="phpvms_acarsdata" Non_unique="1" Key_name="pilotid" Seq_in_index="1" Column_name="pilotid" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" />
@@ -237,7 +237,7 @@
 		<field Field="id" Type="int(11)" Null="NO" Key="PRI" Extra="auto_increment" Comment="" />
 		<field Field="subject" Type="varchar(30)" Null="NO" Key="" Default="" Extra="" Comment="" />
 		<field Field="body" Type="text" Null="NO" Key="" Extra="" Comment="" />
-		<field Field="postdate" Type="datetime" Null="NO" Key="" Default="0000-00-00 00:00:00" Extra="" Comment="" />
+		<field Field="postdate" Type="datetime" Null="NO" Key="" Default="1970-01-01 01:01:01" Extra="" Comment="" />
 		<field Field="postedby" Type="varchar(50)" Null="NO" Key="" Default="" Extra="" Comment="" />
 		<key Table="phpvms_news" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="id" Collation="A" Cardinality="2" Null="" Index_type="BTREE" Comment="" />
 		<options Name="phpvms_news" Engine="InnoDB" Version="10" Row_format="Compact" Rows="2" Avg_row_length="8192" Data_length="16384" Max_data_length="0" Index_length="0" Data_free="9437184" Auto_increment="3" Create_time="2011-11-17 20:33:50" Collation="latin1_swedish_ci" Create_options="" Comment="" />
@@ -248,7 +248,7 @@
 		<field Field="filename" Type="varchar(30)" Null="NO" Key="" Default="" Extra="" Comment="" />
 		<field Field="order" Type="smallint(6)" Null="NO" Key="" Default="0" Extra="" Comment="" />
 		<field Field="postedby" Type="varchar(50)" Null="NO" Key="" Default="" Extra="" Comment="" />
-		<field Field="postdate" Type="datetime" Null="NO" Key="" Default="0000-00-00 00:00:00" Extra="" Comment="" />
+		<field Field="postdate" Type="datetime" Null="NO" Key="" Default="1970-01-01 01:01:01" Extra="" Comment="" />
 		<field Field="public" Type="smallint(6)" Null="NO" Key="" Default="0" Extra="" Comment="" />
 		<field Field="enabled" Type="smallint(6)" Null="NO" Key="" Default="1" Extra="" Comment="" />
 		<key Table="phpvms_pages" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="pageid" Collation="A" Cardinality="0" Null="" Index_type="BTREE" Comment="" />
@@ -277,8 +277,8 @@
 		<field Field="ranklevel" Type="int(11)" Null="NO" Key="" Default="0" Extra="" Comment="" />
 		<field Field="confirmed" Type="smallint(5) unsigned" Null="NO" Key="" Default="0" Extra="" Comment="" />
 		<field Field="retired" Type="smallint(6)" Null="NO" Key="" Default="0" Extra="" Comment="" />
-		<field Field="joindate" Type="datetime" Null="NO" Key="" Default="0000-00-00 00:00:00" Extra="" Comment="" />
-		<field Field="lastpirep" Type="datetime" Null="NO" Key="" Default="0000-00-00 00:00:00" Extra="" Comment="" />
+		<field Field="joindate" Type="TIMESTAMP" Null="NO" Key="" Default="CURRENT_TIMESTAMP" Extra="" Comment="" />
+		<field Field="lastpirep" Type="datetime" Null="NO" Key="" Default="1970-01-01 01:01:01" Extra="" Comment="" />
 		<field Field="lastip" Type="varchar(25)" Null="YES" Key="" Default="" Extra="" Comment="" />
 		<field Field="comment" Type="text" Null="YES" Key="" Extra="" Comment="" />
 		<key Table="phpvms_pilots" Non_unique="0" Key_name="PRIMARY" Seq_in_index="1" Column_name="pilotid" Collation="A" Cardinality="4" Null="" Index_type="BTREE" Comment="" />
@@ -320,7 +320,7 @@
 		<field Field="flighttime_stamp" Type="time" Null="NO" Key="" Extra="" Comment="" />
 		<field Field="distance" Type="smallint(6)" Null="NO" Key="" Default="0" Extra="" Comment="" />
 		<field Field="landingrate" Type="float" Null="NO" Key="" Default="0" Extra="" Comment="" />
-		<field Field="submitdate" Type="datetime" Null="NO" Key="" Default="0000-00-00 00:00:00" Extra="" Comment="" />
+		<field Field="submitdate" Type="datetime" Null="NO" Key="" Default="1970-01-01 01:01:01" Extra="" Comment="" />
 		<field Field="modifieddate" Type="datetime" Null="NO" Key="" Extra="" Comment="" />
 		<field Field="accepted" Type="smallint(6)" Null="NO" Key="" Default="0" Extra="" Comment="" />
 		<field Field="log" Type="text" Null="NO" Key="" Extra="" Comment="" />
