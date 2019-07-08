@@ -1,6 +1,6 @@
-#phpVMS 5.5.2.72#
+**_phpVMS 5.5.2.72_**
 
-**_Updated version of phpVMS 5.5.2 (simpilot) with PHP 7.2 compatibility_**
+**Updated version of phpVMS 5.5.2 (simpilot) with PHP 7.2 compatibility**
 
 Current release stable on PHP 7.2.19 environment (Apache 2.4.39, PHP 7.2.19, MySQL 5.6.44).
 
