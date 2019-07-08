@@ -266,7 +266,7 @@
 		<field Field="password" Type="varchar(32)" Null="NO" Key="" Default="" Extra="" Comment="" />
 		<field Field="salt" Type="varchar(32)" Null="NO" Key="" Default="" Extra="" Comment="" />
 		<field Field="bgimage" Type="varchar(30)" Null="NO" Key="" Default="" Extra="" Comment="" />
-		<field Field="lastlogin" Type="date" Null="NO" Key="" Default="0000-00-00" Extra="" Comment="" />
+		<field Field="lastlogin" Type="date" Null="NO" Key="" Default="1970-01-01" Extra="" Comment="" />
 		<field Field="totalflights" Type="int(11)" Null="NO" Key="" Default="0" Extra="" Comment="" />
 		<field Field="totalhours" Type="float" Null="NO" Key="" Default="0" Extra="" Comment="" />
 		<field Field="totalpay" Type="float" Null="NO" Key="" Default="0" Extra="" Comment="" />
