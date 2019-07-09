@@ -8,9 +8,10 @@ Current release stable on PHP 7.2.19 environment (Apache 2.4.39, PHP 7.2.19, MyS
 
 * Will install under PHP 7.2 - But a few Warning messages may show when installing. Install completes successfully. Some users will not experience any Warning messages during install.
 * Full install required. Update install is not working correctly.
-* Working on a few other minor issues - check the 'Issues' tab for additional info. Report any additional issues there.
+* Report any issues using the "Issues" tab above.
 * This may install under PHP 7.0 and 7.1 - but has not been fully tested.
 * Will install using MySQL 5.6 and MySQL 5.7.
+* Installation outside the parameters listed may not receive support (Apache 2.4, PHP 7.2, MySQL 5.6).
 
 **--------------------------------_CAUTION_------------------------------------------**
 
