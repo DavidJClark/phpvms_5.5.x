@@ -1,7 +1,0 @@
-#
-# Travis CI config file
-#
-
-language: php
-php:
-  - '7.2'
