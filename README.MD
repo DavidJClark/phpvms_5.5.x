@@ -1,3 +1,9 @@
+***Work in progress to make installation compliant with "Strict Mode" for use with MySQL 5.7 and MariaDB 10.2 and newer versions.***
+
+** *****Use is at your own risk. Do not use if you don't understand the implications of "Strict Mode".***** **
+**For use in new installations only. You can not install and then marry to a database used with previous versions.
+You may be able to import just the data from your old database into the newly created database from this install. Do NOT import the structure from your old database. Many field DEFAULT values have been added.**
+
 phpVMS 5.5.2.72
 ===============
 
