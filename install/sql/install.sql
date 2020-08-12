@@ -168,9 +168,9 @@ CREATE TABLE `phpvms_downloads` (
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `phpvms_expenselog` (
-  `dateadded` int(11) NOT NULL DEFAULT'' DEFAULT'' DEFAULT'' DEFAULT'',
-  `name` varchar(25) NOT NULL DEFAULT'' DEFAULT'' DEFAULT'',
-  `type` varchar(2) NOT NULL DEFAULT'' DEFAULT'',
+  `dateadded` int(11) NOT NULL DEFAULT'',
+  `name` varchar(25) NOT NULL DEFAULT'',
+  `type` varchar(2) NOT NULL DEFAULT'',
   `cost` float NOT NULL DEFAULT'',
   KEY `dateadded` (`dateadded`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
