@@ -132,17 +132,19 @@ class PilotAdmin extends CodonModule {
                 
                 $fields = RegistrationData::getCustomFields();
         
-        		if(count($fields) > 0) {
-            		foreach ($fields as $field) {
-                		$value = Vars::POST($field->fieldname);
-                		$value1 = DB::escape($value);
-                		if ($field->required == 1 && $value1 == '') {
+        		if(is_array($fields) || $fields instanceof Countable) {
+				if(count($fields) > 0) {
+            				foreach ($fields as $field) {
+                				$value = Vars::POST($field->fieldname);
+                				$value1 = DB::escape($value);
+                				if ($field->required == 1 && $value1 == '') {
 							$this->set('message', ''.$field->title.' cannot be blank!');
 							$this->render('core_error.php');
 							return;
-                		} 
-            		}
-        		}
+                				} 
+            				}
+        			}
+			}
 
                 $params = array(
                     'code' => $this->post->code, 

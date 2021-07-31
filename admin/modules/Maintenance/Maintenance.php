@@ -121,7 +121,9 @@ class Maintenance extends CodonModule {
         foreach ($all_pilots as $pilot) {
             
             $pireps = PIREPData::getReportsByAcceptStatus($pilot->pilotid, PIREP_ACCEPTED);
-            $total = count($pireps);
+            if(is_array ($pireps) || $pireps instanceof Countable) {
+		$total = count($pireps);
+	    }
             unset($pireps);
 
             $code = PilotData::getPilotCode($pilot->code, $pilot->pilotid);

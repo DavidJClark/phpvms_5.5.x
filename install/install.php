@@ -74,16 +74,15 @@ switch($_GET['page']) {
 		
 		if($_POST['action'] == 'submitsetup') {
 		  
-			if($_POST['firstname'] == '' || $_POST['lastname'] == '' 
-				|| $_POST['email'] == '' ||  $_POST['password'] == '' || $_POST['vaname'] == '' 
-				|| $_POST['vacode'] == '') {
+			if($_POST['SITE_NAME'] == '' || $_POST['ADMIN_EMAIL'] == '' || 
+			   $_POST['vaname'] == '' || $_POST['vacode'] == '' || 
+			   $_POST['firstname'] == '' || $_POST['lastname'] == '' || 
+			   $_POST['email'] == '' ||  $_POST['password'] == '') {
 				    
 				Template::Set('message', 'You must fill out all of the fields');
 				Template::Show('s2_site_setup');
 				break;
 			}
-			
-			$_POST['SITE_NAME'] = $_POST['vaname'];
 				
 			if(!Installer::SiteSetup()) {
 				Template::Set('message', Installer::$error);

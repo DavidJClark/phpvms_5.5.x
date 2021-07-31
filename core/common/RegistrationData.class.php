@@ -135,16 +135,18 @@ class RegistrationData extends CodonData {
         //Get customs fields
         $fields = self::getCustomFields();
         
-        if(count($fields) > 0) {
-            foreach ($fields as $field) {
-                $value = Vars::POST($field->fieldname);
-                $value = DB::escape($value);
+        if(is_array($fields) || $fields instanceof Countable) {
+	    if(count($fields) > 0) {
+                foreach ($fields as $field) {
+                    $value = Vars::POST($field->fieldname);
+                    $value = DB::escape($value);
     
-                if ($value != '') {
-                    $sql = "INSERT INTO `".TABLE_PREFIX."fieldvalues` (fieldid, pilotid, value)
-    							VALUES ($field->fieldid, $pilotid, '$value')";
+                    if ($value != '') {
+                        $sql = "INSERT INTO `".TABLE_PREFIX."fieldvalues` (fieldid, pilotid, value)
+			    VALUES ($field->fieldid, $pilotid, '$value')";
     
-                    DB::query($sql);
+                        DB::query($sql);
+                    }
                 }
             }
         }

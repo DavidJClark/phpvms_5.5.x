@@ -115,30 +115,32 @@ class PIREPAdmin extends CodonModule {
 
         $allpireps = PIREPData::findPIREPS(array('p.accepted' => PIREP_PENDING));
         
-        $total = count($allpireps);
-        $count = 0;
-        foreach ($allpireps as $pirep_details) {
-            
-            if ($pirep_details->aircraft == '') {
-                continue;
+        if(is_array($allpireps) || $allpireps instanceof Countable); {
+            $total = count($allpireps);
+            $count = 0;
+            foreach ($allpireps as $pirep_details) {
+
+                if ($pirep_details->aircraft == '') {
+                    continue;
+                }
+
+                # Update pilot stats
+                SchedulesData::IncrementFlownCount($pirep_details->code, $pirep_details->flightnum);
+                PIREPData::ChangePIREPStatus($pirep_details->pirepid, PIREP_ACCEPTED); // 1 is accepted
+                #PilotData::UpdatePilotStats($pirep_details->pilotid);
+
+                #RanksData::CalculateUpdatePilotRank($pirep_details->pilotid);
+                RanksData::CalculatePilotRanks();
+                #PilotData::GenerateSignature($pirep_details->pilotid);
+                #StatsData::UpdateTotalHours();
+                CodonEvent::Dispatch('pirep_accepted', 'PIREPAdmin', $pirep_details);
+
+                $count++;
             }
 
-            # Update pilot stats
-            SchedulesData::IncrementFlownCount($pirep_details->code, $pirep_details->flightnum);
-            PIREPData::ChangePIREPStatus($pirep_details->pirepid, PIREP_ACCEPTED); // 1 is accepted
-            #PilotData::UpdatePilotStats($pirep_details->pilotid);
-
-            #RanksData::CalculateUpdatePilotRank($pirep_details->pilotid);
-            RanksData::CalculatePilotRanks();
-            #PilotData::GenerateSignature($pirep_details->pilotid);
-            #StatsData::UpdateTotalHours();
-            CodonEvent::Dispatch('pirep_accepted', 'PIREPAdmin', $pirep_details);
-
-            $count++;
+            $skipped = $total - $count;
+            echo "$count of $total were approved ({$skipped} has errors)";
         }
-
-        $skipped = $total - $count;
-        echo "$count of $total were approved ({$skipped} has errors)";
     }
 
     public function viewall() {
@@ -174,10 +176,12 @@ class PIREPAdmin extends CodonModule {
 
         $allreports = PIREPData::findPIREPS($params, $num_per_page, $this->get->start);
 
-        if (count($allreports) >= $num_per_page) {
-            $this->set('paginate', true);
-            $this->set('admin', 'viewall');
-            $this->set('start', $this->get->start + 20);
+        if (is_array($allreports) || ($allreports) instanceof Countable) {
+            if (count($allreports) >= $num_per_page) {
+                $this->set('paginate', true);
+                $this->set('admin', 'viewall');
+                $this->set('start', $this->get->start + 20);
+            }
         }
 
         $this->set('pending', false);

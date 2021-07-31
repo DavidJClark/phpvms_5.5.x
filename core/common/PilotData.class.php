@@ -440,9 +440,9 @@ class PilotData extends CodonData {
 
         # Create the image so we can convert it to PNG
         if ($_FILES['avatar']['type'] == 'image/gif') {
-            $img = imagecreatefromgif($_FILES['file']['tmp_name']);
-        } elseif ($_FILES['avatar']['type'] == 'image/jpeg' || $_FILES['avatar']['type'] ==
-        'image/pjpeg') {
+            $img = imagecreatefromgif($_FILES['avatar']['tmp_name']);
+        } elseif ($_FILES['avatar']['type'] == 'image/jpg' || $_FILES['avatar']['type'] ==
+        'image/jpeg') {
             $img = imagecreatefromjpeg($_FILES['avatar']['tmp_name']);
         } elseif ($_FILES['avatar']['type'] == 'image/png') {
             $img = imagecreatefrompng($_FILES['avatar']['tmp_name']);
@@ -761,7 +761,7 @@ class PilotData extends CodonData {
             self::updateProfile($row->pilotid, array('retired' => $retired_id));
 
             Template::Set('pilot', $row);
-            $pilot_retired_template = Template::Get('email_pilot_retired.tpl', true, true, true);
+            $pilot_retired_template = Template::Get('email_pilot_retired.php', true, true, true);
 
             Util::SendEmail($row->email, Lang::get('email.pilot.retired.subject'), $pilot_retired_template);
         }
@@ -1029,7 +1029,7 @@ class PilotData extends CodonData {
             #
             #  DO NOT remove this, as per the phpVMS license
             $font = 1;
-            $text = 'powered by phpvms, ' . SITE_NAME . ' ';
+            $text = 'powered by phpVMS, ' . SITE_NAME . ' ';
             imagestring($img, $font, $width - (strlen($text) * imagefontwidth($font)), $height -
                 imagefontheight($font), $text, $textcolor);
         }

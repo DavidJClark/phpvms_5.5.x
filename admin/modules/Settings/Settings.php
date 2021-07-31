@@ -147,7 +147,7 @@ class Settings extends CodonModule {
 		unset($_POST['action']);
 		unset($_POST['submit']);
 
-		while(list($name, $value) = each($_POST)){
+		foreach ($_POST as $name => $value) {
 
 			if($name == 'action')
 					continue;

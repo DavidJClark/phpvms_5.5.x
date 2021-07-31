@@ -279,7 +279,8 @@ class Import extends CodonModule {
             $total++;
         }
 
-        unlink($new_name);
+        fclose($fp);
+	unlink($new_name);
 
         echo "The import process is complete, added {$added} aircraft, updated {$updated}, for a total of {$total}<br />";
     }
@@ -479,7 +480,8 @@ class Import extends CodonModule {
 
         echo '</div>';
 
-        unlink($new_name);
+        fclose($fp);
+	unlink($new_name);
     }
 
     protected function get_airport_info($icao) {

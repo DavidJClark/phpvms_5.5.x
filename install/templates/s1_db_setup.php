@@ -67,16 +67,16 @@
 				<option value="mysql" <?php echo $mysql_connect;?>>MySQL</option>
 				<option value="mysqli" <?php echo $mysqli_connect;?>>MySQLi (Extended)</option>
 			</select>
-			<p>Select the database connector. The best default for your install is pre-selected.</p>
+			<p>Select the database connector. MySQLi (Extended) is required. Any other options is at your own risk.</p>
 		</td>	
 	</tr>
 	<tr>
 		<td align="right" valign="top"><strong>Table Prefix: </strong></td>
 		<td>
-			<input type="text" name="TABLE_PREFIX" 
+			<input type="text" id="TABLE_PREFIX" name="TABLE_PREFIX" 
 				value="<?php echo $_POST['TABLE_PREFIX']==''?'phpvms_':$_POST['TABLE_PREFIX'];?>" />
-			<p>If you share this database with another application, use a prefix to the tables, so there
-				are no collisions.</p>
+			<p>Prefix 'phpvms' is default. If you share this database with another application, 
+				use a prefix to the tables, so there are no collisions.</p>
 		</td>	
 	</tr>
 		

@@ -1,6 +1,6 @@
 <?php
 
-function open_flash_chart_object_str( $width, $height, $url, $use_swfobject=true, $base='' )
+public function open_flash_chart_object_str( $width, $height, $url, $use_swfobject=true, $base='' )
 {
     //
     // return the HTML as a string
@@ -8,7 +8,7 @@ function open_flash_chart_object_str( $width, $height, $url, $use_swfobject=true
     return _ofc( $width, $height, $url, $use_swfobject, $base );
 }
 
-function open_flash_chart_object( $width, $height, $url, $use_swfobject=true, $base='' )
+public function open_flash_chart_object( $width, $height, $url, $use_swfobject=true, $base='' )
 {
     //
     // stream the HTML into the page
@@ -16,7 +16,7 @@ function open_flash_chart_object( $width, $height, $url, $use_swfobject=true, $b
     echo _ofc( $width, $height, $url, $use_swfobject, $base );
 }
 
-function _ofc( $width, $height, $url, $use_swfobject, $base )
+public function _ofc( $width, $height, $url, $use_swfobject, $base )
 {
     //
     // I think we may use swfobject for all browsers,

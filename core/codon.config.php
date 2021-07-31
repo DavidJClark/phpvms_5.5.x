@@ -57,8 +57,8 @@ define('LIB_PATH', SITE_ROOT.DS.'lib');
 define('VENDORS_PATH', CORE_PATH.DS.'vendors');
 
 $version = phpversion();
-if(intval($version[0]) < 5) {
-	die('You are not running PHP 5+');
+if(intval($version[0]) < 7) {
+	die('You are not running PHP 7+');
 }
 
 require CLASS_PATH.DS.'autoload.php';
@@ -91,10 +91,10 @@ if(DBASE_NAME != '' && DBASE_SERVER != '' && DBASE_NAME != 'DBASE_NAME') {
     
 	require CLASS_PATH.DS.'ezdb/ezdb.class.php';
 	
+	DB::init(DBASE_TYPE);
+	
 	DB::$show_errors = Config::Get('DEBUG_MODE');
 	DB::$throw_exceptions = false;
-	
-	DB::init(DBASE_TYPE);
 	
 	DB::set_log_errors(Config::Get('DEBUG_MODE'));
 	DB::set_error_handler(array('Debug', 'db_error'));

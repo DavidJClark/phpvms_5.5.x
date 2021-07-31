@@ -11,7 +11,7 @@ function json_format($json)
 /*
  commented out by monk.e.boy 22nd May '08
  because my web server is PHP4, and
- json_* are PHP5 functions...
+ json_* are PHP5 functions... */
 
     $json_obj = json_decode($json);
 
@@ -19,7 +19,7 @@ function json_format($json)
         return false;
 
     $json = json_encode($json_obj);
-*/
+/* end commented out - above should work in PHP 7.2*/
     $len = strlen($json);
 
     for($c = 0; $c < $len; $c++)

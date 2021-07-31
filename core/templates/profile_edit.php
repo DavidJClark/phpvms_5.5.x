@@ -6,8 +6,8 @@
 	<dd><?php echo $pilot->firstname . ' ' . $pilot->lastname;?></dd>
 	
 	<dt>Airline</dt>
-	<dd><?php echo $pilot->code?>
-		<p>To request a change, contact your admin</p>
+	<dd><?php echo $pilot->code;?>
+		<p>To request a change, contact a staff member.</p>
 	</dd>
 	
 	<dt>Email Address</dt>
@@ -96,12 +96,13 @@
 	<dt>Avatar:</dt>
 	<dd><input type="hidden" name="MAX_FILE_SIZE" value="<?php echo Config::Get('AVATAR_FILE_SIZE');?>" />
 		<input type="file" name="avatar" size="40"> 
-		<p>Your image will be resized to <?php echo Config::Get('AVATAR_MAX_HEIGHT').'x'.Config::Get('AVATAR_MAX_WIDTH');?>px</p>
+		<p>Max file size for avatar upload is <?php echo Config::Get('AVATAR_FILE_SIZE');?> bytes.</p>
+		<p>Your image will be resized to <?php echo Config::Get('AVATAR_MAX_HEIGHT').'px x '.Config::Get('AVATAR_MAX_WIDTH');?>px.</p>
 	</dd>
 	<dt>Current Avatar:</dt>
 	<dd><?php	
 			if(!file_exists(SITE_ROOT.AVATAR_PATH.'/'.$pilotcode.'.png')) {
-				echo 'None selected';
+				echo 'None selected - You can upload a GIF, JPG or PNG image for an avatar';
 			} else {
 		?>
 			<img src="<?php	echo SITE_URL.AVATAR_PATH.'/'.$pilotcode.'.png';?>" /></dd>

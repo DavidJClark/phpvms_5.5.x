@@ -11,11 +11,11 @@
  * 
  * Also, READ THE DOCS
  * 
- *   http://www.phpvms.net/docs/skinning
+ *   https://www.phpvms.net/docs/skinning
  * 
  */
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
+?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en" dir="ltr">
 <head>
 <meta http-equiv="X-UA-Compatible" content="IE=7">
 <title><?php echo $page_title; ?></title>
@@ -90,9 +90,9 @@ echo $page_htmlreq;
 			/*	You can modify this template into a table or something, by default
 				it's list elements inside of a UL. Here's a link with some info:
 				
-				http://articles.sitepoint.com/article/css-anthology-tips-tricks-4/2
+				https://www.sitepoint.com/css-anthology-tips-tricks-4/2/
 			 */
-			Template::Show('core_navigation.tpl');
+			Template::Show('core_navigation.php');
 			?>
 		</ul>
 	</div>
@@ -117,7 +117,7 @@ echo $page_htmlreq;
 	<p>copyright &copy; 2007 - <?php echo date('Y') ?> - <?php echo SITE_NAME; ?><br />
 	<!-- Please retain this!! It's part of the phpVMS license. You must display a
 			"powered by phpVMS" somewhere on your page. Thanks! -->
-	<a href="http://www.phpvms.net" target="_blank">powered by phpVMS</a></p>
+	<a href="https://www.phpvms.net" target="_blank">powered by phpVMS</a></p>
 	</div>	
 </div>
 </body>
